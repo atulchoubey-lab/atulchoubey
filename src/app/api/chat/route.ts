@@ -275,16 +275,14 @@ export async function POST(req: NextRequest) {
     // Gemini call
     const geminiKey = process.env.GEMINI_API_KEY;
     if (geminiKey) {
-      const geminiContents = messages.map(
-        (m: { role: string; content: string }, idx: number) => {
-          const role = m.role === "assistant" ? "model" : "user";
-          // Inject full context + system rules into the first user turn
-          const text = idx === 0 && role === "user"
-            ? `${fullPrompt}\n\n---\n[Visitor's question]\n${m.content}`
-            : m.content;
-          return { role, parts: [{ text }] };
-        }
-      );
+      // Map conversation history — system prompt goes in system_instruction
+      // so it applies to EVERY turn, not just the first message.
+      // Previously context was injected only at idx===0 which meant all
+      // follow-up questions had no profile data → Gemini hallucinated.
+      const geminiContents = messages.map((m: { role: string; content: string }) => ({
+        role: m.role === "assistant" ? "model" : "user",
+        parts: [{ text: m.content }],
+      }));
 
       const geminiRes = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`,
@@ -292,6 +290,7 @@ export async function POST(req: NextRequest) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            system_instruction: { parts: [{ text: fullPrompt }] },
             contents: geminiContents,
             generationConfig: { temperature: 0.5, maxOutputTokens: 250 },
           }),
