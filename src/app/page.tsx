@@ -6,7 +6,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   MessageSquare, ArrowRight, ArrowDownToLine, ChevronDown,
-  MapPin, GraduationCap, Briefcase, Code2, Rocket, BookOpen, Camera, Heart
+  MapPin, GraduationCap, Briefcase, Code2, Rocket, BookOpen, Camera, Heart,
+  CheckCircle2, Cloud, Music, Activity, Users, Globe
 } from "lucide-react";
 import { profileData } from "@/data/profile";
 
@@ -17,6 +18,47 @@ const milestones = [
   { year: "2020", icon: <Briefcase size={16} />, title: "Career at Kalycito", sub: "DevOps & Platform Eng.", color: "from-blue-500 to-cyan-500" },
   { year: "2023", icon: <Code2 size={16} />, title: "Bosch — Senior SE", sub: "Python & DevOps Automation", color: "from-indigo-500 to-violet-500" },
   { year: "2025", icon: <Rocket size={16} />, title: "MLOps at UBS", sub: "AI Platform Engineering", color: "from-accent to-highlight" },
+];
+
+const careerHighlights = [
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "6+ Years Experience", sub: "In technology and engineering" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "Senior MLOps Engineer", sub: "AI Platform Engineering" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "AI Platform Development", sub: "MLflow, CDSW, GitLab CI/CD" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "Azure & Cloud Technologies", sub: "Enterprise cloud deployments" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "MLOps Pipelines", sub: "End-to-end ML workflows" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "Enterprise AI Solutions", sub: "Large-scale AI implementations" },
+  { icon: <CheckCircle2 size={18} className="text-accent" />, title: "Global Banking Client", sub: "Supporting UBS in Pune" },
+];
+
+const lifeCards = [
+  {
+    icon: <Users size={20} className="text-accent" />,
+    title: "Family",
+    desc: "Deeply rooted in family values. My parents and brother are my greatest strength.",
+    img: "/images/family-photo-at-mahavir-mandir-patna.jpg",
+    color: "from-rose-500/15 to-pink-500/15",
+  },
+  {
+    icon: <Globe size={20} className="text-accent" />,
+    title: "Travel & Exploration",
+    desc: "From Rameshwaram to Isha Yoga Centre — I love visiting meaningful places.",
+    img: "/images/me-with-mom-in-rameshwaram-temple.jpg",
+    color: "from-blue-500/15 to-cyan-500/15",
+  },
+  {
+    icon: <Music size={20} className="text-accent" />,
+    title: "Music & Hobbies",
+    desc: "I play acoustic guitar and performed with our rock band at Bosch competitions.",
+    img: "/images/me-with-guitar.jpg",
+    color: "from-violet-500/15 to-purple-500/15",
+  },
+  {
+    icon: <Activity size={20} className="text-accent" />,
+    title: "Fitness & Lifestyle",
+    desc: "Morning gym sessions and caring for my pug Muffy are part of my daily routine.",
+    img: "/images/me-with-my-pug-muffy.jpg",
+    color: "from-emerald-500/15 to-teal-500/15",
+  },
 ];
 
 const previewPhotoIds = [
@@ -51,8 +93,8 @@ export default function Home() {
             className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 max-w-2xl"
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-xs tracking-wider uppercase mb-2">
-              <MapPin size={13} />
-              <span>Pune, Maharashtra &nbsp;·&nbsp; Originally from Bihar</span>
+              <Code2 size={13} />
+              <span>AI &nbsp;•&nbsp; MLOps &nbsp;•&nbsp; Cloud Platforms</span>
             </div>
 
             <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight text-foreground tracking-tight">
@@ -65,11 +107,11 @@ export default function Home() {
 
             <div className="flex items-center gap-1.5 text-muted justify-center lg:justify-start text-sm">
               <MapPin size={16} className="text-accent" />
-              <span>{profileData.personal.current_city} (Originally from {profileData.family.roots.state})</span>
+              <span>Pune, Maharashtra</span>
             </div>
 
             <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              Passionate about technology, continuous learning, family values, and building meaningful relationships.
+              Passionate about building AI platforms, continuous learning, family values, travel, fitness and meaningful relationships.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
@@ -108,15 +150,15 @@ export default function Home() {
             className="flex-1 w-full max-w-md flex flex-col gap-6 items-center"
           >
             {/* Profile Photo */}
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-card-border/90 group">
+            <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-card-border/90 group bg-secondary/10">
               <Image
                 src="/images/profile-photo.jpg"
                 alt="Atul Choubey"
                 fill
                 priority
-                className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent pointer-events-none" />
             </div>
 
             {/* Personal snapshot card */}
@@ -154,15 +196,162 @@ export default function Home() {
             <ChevronDown
               size={18}
               className="text-muted hover:text-foreground transition-colors cursor-pointer"
-              onClick={() => document.getElementById("life-story")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("career-highlights")?.scrollIntoView({ behavior: "smooth" })}
             />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Career Highlights ── */}
+      <section id="career-highlights" className="relative w-full py-20 z-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+          <div className="text-center space-y-3">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-1.5 px-3 py-1 bg-secondary text-accent rounded-full text-xs font-semibold uppercase tracking-wider"
+            >
+              <Briefcase size={13} />
+              <span>Career</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-display font-extrabold text-3xl sm:text-4xl text-foreground tracking-tight"
+            >
+              Career Highlights
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {careerHighlights.map((h, idx) => (
+              <motion.div
+                key={h.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.45, delay: idx * 0.07 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="glass-panel rounded-2xl p-5 border border-card-border/80 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 flex items-start gap-4 group"
+              >
+                <div className="mt-0.5 shrink-0 p-2 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                  {h.icon}
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-sm sm:text-base text-foreground group-hover:text-accent transition-colors leading-tight">
+                    {h.title}
+                  </h3>
+                  <p className="text-xs text-muted mt-0.5">{h.sub}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Life Beyond Work ── */}
+      <section className="relative w-full py-20 bg-card/10 border-y border-card-border/40 z-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+          <div className="text-center space-y-3">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-1.5 px-3 py-1 bg-secondary text-accent rounded-full text-xs font-semibold uppercase tracking-wider"
+            >
+              <Heart size={13} />
+              <span>Beyond Work</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-display font-extrabold text-3xl sm:text-4xl text-foreground tracking-tight"
+            >
+              Life Beyond Work
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-muted max-w-xl mx-auto text-sm sm:text-base"
+            >
+              Technology is what I do — but family, music, travel, and fitness are who I am.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {lifeCards.map((card, idx) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="glass-panel rounded-2xl overflow-hidden border border-card-border/80 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 flex flex-col group"
+              >
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary/20">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.06] transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${card.color} mix-blend-multiply opacity-40`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                </div>
+                <div className="p-4 space-y-2 flex-grow">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 bg-accent/10 rounded-lg">
+                      {card.icon}
+                    </div>
+                    <h3 className="font-display font-bold text-sm text-foreground group-hover:text-accent transition-colors">
+                      {card.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-muted leading-relaxed">{card.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+          >
+            <Link
+              href="/family"
+              className="flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl shadow-lg shadow-accent/25 transition-all duration-300 group"
+            >
+              <Users size={16} />
+              <span>Meet My Family</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/gallery"
+              className="flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 border border-card-border/80 text-foreground font-semibold rounded-xl transition-all duration-300 group"
+            >
+              <Camera size={16} className="text-accent" />
+              <span>View Gallery</span>
+              <ArrowRight size={14} className="text-accent group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </section>
 
       {/* ── Life Story Gist ── */}
       <section id="life-story" className="relative w-full py-24 z-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
 
           <div className="text-center space-y-3">
@@ -197,7 +386,6 @@ export default function Home() {
 
           {/* Milestone Cards */}
           <div className="relative">
-            {/* Connecting line (desktop) */}
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-card-border/60 to-transparent -translate-y-1/2 z-0" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 relative z-10">
@@ -364,7 +552,6 @@ export default function Home() {
             </motion.p>
           </div>
 
-          {/* Photo Grid */}
           {galleryPreviewPhotos.length > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto">
               {galleryPreviewPhotos.map((photo, idx) => (

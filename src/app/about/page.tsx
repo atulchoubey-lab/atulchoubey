@@ -3,10 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
-import { MapPin, Briefcase, GraduationCap, Heart, Sparkles, Compass } from "lucide-react";
+import { MapPin, Compass, Sparkles } from "lucide-react";
 
 interface TimelineItem {
   id: string;
+  type?: "memory";
   stageTitle: string;
   location: string;
   period: string;
@@ -15,131 +16,139 @@ interface TimelineItem {
     src: string;
     title: string;
     caption: string;
+    aspectRatio?: string;
   }[];
 }
 
 export default function About() {
   const timeline: TimelineItem[] = [
     {
-      id: "origins",
-      stageTitle: "Origins & Schooling",
-      location: "Patna, Bihar",
-      period: "1997 - 2015",
-      description: "I was born and raised in Patna, Bihar, in a family that prioritized strong values, education, and self-discipline. I completed my schooling here at Radiant International School, passing my Class X exams in 2013 and Class XII in 2015. Growing up in Patna shaped my personality and instilled a deep respect for learning.",
+      id: "roots",
+      stageTitle: "Roots in Bihar",
+      location: "Ahirauli, Buxar, Bihar",
+      period: "Ancestral Roots",
+      description: "My roots trace back to Ahirauli, a village in the Buxar district of Bihar. Our family gotra is Bhargav, and our values — integrity, education, and respect — come from this land. No matter where life has taken me, I carry this heritage with pride.",
       visuals: [
         {
-          src: "/images/contextual/patna-skyline.png",
-          title: "Patna Heritage Skyline",
-          caption: "Growing up in Patna along the Ganges, where my education and values took shape."
+          src: "/images/contextual/buxar-heritage.png",
+          title: "Buxar, Bihar",
+          caption: "My ancestral village in Buxar district — the land where our family's story began."
         }
       ]
     },
     {
-      id: "buxar",
-      stageTitle: "Family Roots",
-      location: "Ahirauli, Buxar, Bihar",
-      period: "Roots",
-      description: "My ancestral roots trace back to Ahirauli, a historic village in the Buxar district of Bihar. Our family gotra is Bhargav. Buxar is a place close to my heart, representing our lineage, traditional heritage, and family values that keep me grounded no matter where my professional journey takes me.",
+      id: "patna",
+      stageTitle: "Growing Up in Patna",
+      location: "Patna, Bihar",
+      period: "1997 – 2015",
+      description: "I was born and raised in Patna, Bihar, in a close-knit family that valued education, discipline, and strong relationships. Patna shaped my early years and gave me the ambition to grow beyond what I could see around me.",
       visuals: [
         {
-          src: "/images/contextual/buxar-heritage.png",
-          title: "Buxar Ancestral Roots",
-          caption: "Buxar district, Bihar – the land of my ancestors."
+          src: "/images/contextual/patna-skyline.png",
+          title: "Patna, Bihar",
+          caption: "Growing up along the Ganges in Patna, where my curiosity for the world first sparked."
+        }
+      ]
+    },
+    {
+      id: "school",
+      stageTitle: "School Years",
+      location: "Patna, Bihar",
+      period: "2013 – 2015",
+      description: "I completed my schooling at Radiant International School, Patna, where I developed a strong interest in science, technology, and problem-solving. Those years built my foundation and made me hungry to learn more.",
+      visuals: [
+        {
+          src: "/images/me-school-time.jpg",
+          title: "School Days",
+          caption: "School life in Patna — where curiosity met structure and a love for technology began to form."
         }
       ]
     },
     {
       id: "engineering",
-      stageTitle: "Engineering Studies",
+      stageTitle: "Engineering at CIT",
       location: "Coimbatore, Tamil Nadu",
-      period: "2016 - 2020",
-      description: "I moved away from home to Coimbatore to pursue my Bachelor of Technology (B.Tech) in Information Technology at the Coimbatore Institute of Technology (CIT). Living in Coimbatore taught me independence and allowed me to build a strong foundation in computer science, system automation, and software engineering. I graduated with First Class honors in September 2020.",
+      period: "2016 – 2020",
+      description: "I completed my Bachelor of Technology in Information Technology from the Coimbatore Institute of Technology. Four years at CIT gave me a strong foundation in software engineering, system design, programming, and problem-solving — and taught me how to learn independently.",
       visuals: [
         {
           src: "/images/cit.jpg",
           title: "Coimbatore Institute of Technology",
-          caption: "My engineering campus in Coimbatore, where I spent four formative academic years."
-        },
+          caption: "My engineering campus — four transformative years that shaped how I think and build.",
+          aspectRatio: "2/3"
+        }
+      ]
+    },
+    {
+      id: "adiyogi",
+      type: "memory",
+      stageTitle: "Memories from Coimbatore",
+      location: "Coimbatore, Tamil Nadu",
+      period: "A Favourite Place",
+      description: "One of my favourite places during my years in Coimbatore — the Adiyogi Shiva statue at the Isha Yoga Centre. A place that always brought a sense of calm and perspective.",
+      visuals: [
         {
           src: "/images/adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero.jpg",
-          title: "Adiyogi, Coimbatore",
-          caption: "A memorable spiritual place in Coimbatore from my engineering years."
+          title: "Adiyogi, Isha Yoga Centre",
+          caption: "A memorable landmark from my Coimbatore years.",
+          aspectRatio: "16/9"
         }
       ]
     },
     {
       id: "kalycito",
-      stageTitle: "Beginning My Career",
+      stageTitle: "Kalycito Technologies",
       location: "Coimbatore, Tamil Nadu",
-      period: "2020 - 2022",
-      description: "I began my professional career in Coimbatore at Kalycito Infotech, an exciting startup where I worked as a DevOps and Platform Engineer. I deployed and managed multi-node Kubernetes clusters supporting containerized services — an exhilarating transition from academia into real production-scale automation.",
+      period: "2020 – 2022",
+      description: "I started my professional career at Kalycito Technologies, a startup where I worked as a Software Engineer on DevOps and platform engineering projects. Deploying Kubernetes clusters and building CI/CD pipelines in a fast-paced environment was an exciting first chapter in my career.",
       visuals: [
         {
           src: "/images/me-at-kalycito-office-early-days.jpg",
           title: "At Kalycito Office",
-          caption: "Early days at Kalycito Infotech — building pipelines and managing Kubernetes clusters."
+          caption: "Early career days at Kalycito — learning fast, building things, and loving every moment of it."
         }
       ]
     },
     {
       id: "bosch",
-      stageTitle: "Software Automation at Bosch",
+      stageTitle: "Bosch Global Software Technologies",
       location: "Coimbatore, Tamil Nadu",
-      period: "2023 - 2024",
-      description: "I joined Bosch Global Software Technologies in Coimbatore as a Senior Software Engineer. I built Python automation scripts to parse Jenkins and REST API metrics and stream them to dashboards. I also managed and optimized over 50 build pipelines. During my time at Bosch, I also had the opportunity to play guitar and perform with our employees' rock band, which was incredibly rewarding.",
+      period: "2023 – 2024",
+      description: "I joined Bosch Global Software Technologies as a Senior Software Engineer, focusing on Python automation, Jenkins pipeline optimization, and REST API metrics dashboards. Beyond engineering, I also performed with our employee rock band at an interstate music competition — one of my proudest off-desk moments.",
       visuals: [
         {
           src: "/images/bosch-building.jpg",
           title: "Bosch Office, Coimbatore",
-          caption: "Working on enterprise software automation at the Bosch Coimbatore campus."
+          caption: "The Bosch campus where I worked on enterprise automation and build pipelines."
         },
         {
           src: "/images/rock-band-performance-at-bosch-employees-interstate-competition.jpg",
           title: "Rock Band Performance",
-          caption: "Performing live with our band at the Bosch employee music competition."
+          caption: "Performing live with our band at the Bosch employee interstate music competition."
         }
       ]
     },
     {
       id: "ubs",
-      stageTitle: "MLOps Platform Engineering",
-      location: "Pune, India",
-      period: "2025 - Present",
-      description: "I currently work as a Senior MLOps / ML Platform Engineer at Accenture, supporting our client UBS in Pune. I build configuration-driven machine learning pipelines using GitLab CI/CD, CDSW, and MLflow. I love working at the intersection of AI platforms, cloud scalability, and automation, helping data scientists deploy and monitor models reliably.",
+      stageTitle: "Accenture · UBS — MLOps",
+      location: "Pune, Maharashtra",
+      period: "2025 – Present",
+      description: "I currently work as a Senior MLOps / ML Platform Engineer at Accenture, supporting UBS in Pune. I build configuration-driven machine learning pipelines using GitLab CI/CD, CDSW, and MLflow — working at the intersection of AI, cloud infrastructure, and automation to help data scientists ship models reliably.",
       visuals: [
         {
           src: "/images/ubs-pune.jpg",
           title: "UBS Office, Pune",
-          caption: "The UBS campus in Pune where I work on ML platforms and AI infrastructure."
-        },
-        {
-          src: "/images/contextual/ubs-fintech.png",
-          title: "MLOps at UBS",
-          caption: "Building configuration-driven machine learning pipelines and container architectures."
+          caption: "The UBS campus in Pune — where I now focus on ML platforms and AI infrastructure."
         }
       ]
     },
-    {
-      id: "future",
-      stageTitle: "Looking Ahead",
-      location: "Future Vision",
-      period: "Future",
-      description: "Looking forward, my goal is to continue growing as a leader in AI infrastructure and cloud platform engineering. Personally, I am focused on providing comfort and care to my parents, keeping our traditional roots alive, and building a happy, values-driven family based on mutual trust, respect, and growth.",
-      visuals: [
-        {
-          src: "/images/contextual/future-ai-roadmap.png",
-          title: "GenAI & Cloud Roadmap",
-          caption: "Leading AI systems and scaling cloud solutions for the next generation of computing."
-        }
-      ]
-    }
   ];
 
   return (
     <PageWrapper>
       <div className="space-y-16 max-w-5xl mx-auto">
-        
-        {/* Intro Section */}
+
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -153,17 +162,51 @@ export default function About() {
             My Story
           </h1>
           <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            I was born in Patna, Bihar, and raised with strong family values and a focus on education. Here is a brief look at my roots, my studies, and my career journey.
+            I was born and raised in Patna, Bihar, in a family that valued education, integrity, and strong relationships. Over the years, my journey has taken me from Bihar to Coimbatore and then to Pune, where I built a career in technology while staying deeply connected to my roots and family values.
           </p>
         </div>
 
-        {/* Timeline Narrative */}
-        <div className="space-y-20 pt-8 relative">
-          {/* Vertical timeline line (Desktop only) */}
-          <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-[1px] bg-card-border/50 -translate-x-1/2 hidden lg:block" />
+        {/* Timeline */}
+        <div className="space-y-16 pt-4 relative">
+          {/* Vertical line — desktop only */}
+          <div className="absolute left-1/2 top-4 bottom-4 w-[1px] bg-card-border/50 -translate-x-1/2 hidden lg:block" />
 
           {timeline.map((item, idx) => {
             const isEven = idx % 2 === 0;
+
+            /* Memory card — centered, narrower, not part of alternating flow */
+            if (item.type === "memory") {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.5 }}
+                  className="flex justify-center relative z-10"
+                >
+                  <div className="w-full max-w-2xl glass-panel rounded-2xl overflow-hidden border border-accent/20 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 group shadow-sm">
+                    <div className="relative w-full overflow-hidden bg-secondary/10" style={{ aspectRatio: "16/9" }}>
+                      <img
+                        src={item.visuals[0].src}
+                        alt={item.visuals[0].title}
+                        className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <Sparkles size={12} className="text-accent" />
+                          <span className="text-[10px] font-mono font-bold text-accent uppercase tracking-wider">{item.period}</span>
+                        </div>
+                        <h3 className="font-display font-bold text-base text-white">{item.stageTitle}</h3>
+                        <p className="text-xs text-white/70 mt-0.5">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            }
 
             return (
               <motion.div
@@ -177,10 +220,10 @@ export default function About() {
                 }`}
               >
                 {/* Timeline node */}
-                <div className="absolute left-6 lg:left-1/2 top-1.5 w-3 h-3 rounded-full bg-accent border-4 border-background -translate-x-1/2 hidden lg:block shadow-md" />
+                <div className="absolute left-1/2 top-1.5 w-3 h-3 rounded-full bg-accent border-4 border-background -translate-x-1/2 hidden lg:block shadow-md" />
 
-                {/* Left Side: Story text */}
-                <div className="w-full lg:w-1/2 pl-12 lg:pl-0 space-y-4">
+                {/* Story text */}
+                <div className="w-full lg:w-1/2 space-y-4">
                   <div className="space-y-1">
                     <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">
                       {item.period}
@@ -193,14 +236,13 @@ export default function About() {
                       <span>{item.location}</span>
                     </div>
                   </div>
-
                   <p className="text-sm sm:text-base text-muted leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                {/* Right Side: Imagery grid */}
-                <div className={`w-full lg:w-1/2 pl-12 lg:pl-0 ${item.visuals.length === 1 ? "flex" : "grid grid-cols-1 sm:grid-cols-2"} gap-4`}>
+                {/* Imagery */}
+                <div className={`w-full lg:w-1/2 ${item.visuals.length === 1 ? "flex" : "grid grid-cols-1 sm:grid-cols-2"} gap-4`}>
                   {item.visuals.map((visual, vIdx) => (
                     <motion.div
                       key={vIdx}
@@ -210,7 +252,10 @@ export default function About() {
                       transition={{ duration: 0.5, delay: vIdx * 0.15 }}
                       className="glass-panel rounded-2xl overflow-hidden border border-card-border/80 flex flex-col hover:border-accent/30 hover:shadow-xl transition-all duration-300 shadow-sm group w-full"
                     >
-                      <div className="relative w-full overflow-hidden bg-secondary/10" style={{ aspectRatio: visual.src.includes("cit.jpg") ? "2/3" : "4/3" }}>
+                      <div
+                        className="relative w-full overflow-hidden bg-secondary/10"
+                        style={{ aspectRatio: visual.aspectRatio || "4/3" }}
+                      >
                         <img
                           src={visual.src}
                           alt={visual.title}
@@ -234,6 +279,44 @@ export default function About() {
             );
           })}
         </div>
+
+        {/* Looking Ahead */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 pt-8"
+        >
+          <div className="glass-panel rounded-3xl border border-accent/20 overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-stretch">
+              {/* Portrait */}
+              <div className="relative w-full sm:w-56 shrink-0 aspect-[4/5] sm:aspect-auto bg-secondary/20">
+                <img
+                  src="/images/me.jpg"
+                  alt="Atul Choubey"
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/20 hidden sm:block" />
+              </div>
+
+              {/* Text */}
+              <div className="flex flex-col justify-center p-8 space-y-4">
+                <div className="flex items-center gap-2">
+                  <Sparkles size={16} className="text-accent" />
+                  <span className="text-xs font-mono font-bold text-accent uppercase tracking-wider">Future Vision</span>
+                </div>
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-foreground">
+                  Looking Ahead
+                </h2>
+                <p className="text-sm sm:text-base text-muted leading-relaxed max-w-xl">
+                  I believe in continuous learning, meaningful work, strong family values, and building a fulfilling life. My goal is to keep growing as an ML Platform and AI infrastructure leader, while staying deeply rooted in the relationships and principles that matter most.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </PageWrapper>
