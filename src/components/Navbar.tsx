@@ -79,7 +79,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => {
               const isActive = pathname === item.path;
               return (
@@ -104,7 +104,7 @@ export default function Navbar() {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -134,7 +134,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex md:hidden items-center space-x-2">
+          <div className="flex lg:hidden items-center space-x-2">
             <button
               onClick={toggleTheme}
               className="p-2 text-muted hover:text-foreground rounded-lg cursor-pointer"
@@ -154,54 +154,88 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Menu — slide-in drawer from right */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 bg-background/95 backdrop-blur-xl border-b border-card-border/80 md:hidden flex flex-col px-4 py-6 space-y-4 no-print shadow-2xl"
-          >
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item) => {
-                const isActive = pathname === item.path;
-                return (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    className={`px-4 py-3 text-base font-semibold rounded-xl transition-colors ${
-                      isActive
-                        ? "bg-accent/10 text-accent"
-                        : "text-muted hover:bg-secondary/35 hover:text-foreground"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-background/70 backdrop-blur-sm lg:hidden no-print"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            {/* Drawer panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.28, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-[80vw] max-w-[320px] bg-background border-l border-card-border/80 flex flex-col lg:hidden no-print shadow-2xl"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 h-16 border-b border-card-border/50 shrink-0">
+                <span className="font-display font-extrabold text-lg bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">
+                  Navigation
+                </span>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-muted hover:text-foreground rounded-lg transition-colors cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <X size={22} />
+                </button>
+              </div>
 
-            <div className="h-[1px] bg-secondary/30 my-2" />
+              {/* Nav links */}
+              <nav className="flex-1 overflow-y-auto px-4 py-5 space-y-1">
+                {navItems.map((item, idx) => {
+                  const isActive = pathname === item.path;
+                  return (
+                    <motion.div
+                      key={item.path}
+                      initial={{ opacity: 0, x: 16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.035, duration: 0.2 }}
+                    >
+                      <Link
+                        href={item.path}
+                        className={`flex items-center px-4 py-4 text-base font-semibold rounded-xl transition-colors min-h-[52px] ${
+                          isActive
+                            ? "bg-accent/10 text-accent"
+                            : "text-muted hover:bg-secondary/40 hover:text-foreground"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
 
-            <div className="grid grid-cols-2 gap-3 px-2">
-              <Link
-                href="/chat"
-                className="flex items-center justify-center space-x-2 py-3 bg-accent text-white font-semibold rounded-xl shadow-lg shadow-accent/25 hover:opacity-90 transition-opacity"
-              >
-                <MessageSquare size={16} />
-                <span>Ask Atul AI</span>
-              </Link>
-              <Link
-                href="/biodata"
-                className="flex items-center justify-center space-x-2 py-3 bg-secondary text-foreground font-semibold rounded-xl hover:bg-secondary/80 transition-colors"
-              >
-                <ArrowDownToLine size={16} />
-                <span>Biodata</span>
-              </Link>
-            </div>
-          </motion.div>
+              {/* CTA buttons */}
+              <div className="px-4 py-5 border-t border-card-border/50 space-y-3 shrink-0">
+                <Link
+                  href="/chat"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center space-x-2 py-4 bg-accent text-white font-semibold rounded-xl shadow-lg shadow-accent/25 hover:opacity-90 transition-opacity"
+                >
+                  <MessageSquare size={16} />
+                  <span>Ask Atul</span>
+                </Link>
+                <Link
+                  href="/biodata"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center space-x-2 py-4 bg-secondary text-foreground font-semibold rounded-xl hover:bg-secondary/80 transition-colors border border-card-border/60"
+                >
+                  <ArrowDownToLine size={16} />
+                  <span>Download Biodata</span>
+                </Link>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

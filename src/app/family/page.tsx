@@ -32,7 +32,7 @@ export default function Family() {
       relation: "Father",
       name: "Shri Manoranjan Choubey",
       occupation: "Income Tax Advocate",
-      imageSrc: "/images/papa-profile-photo.jpg",
+      imageSrc: "/images/me-with-my-father-add-this-photo-in-family-intro.jpg",
       details: f.father.details
     },
     {
@@ -96,11 +96,11 @@ export default function Family() {
               className="glass-panel rounded-2xl overflow-hidden border border-card-border hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 flex flex-col group shadow-sm"
             >
               {/* Photo Area */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary/10">
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary/10 flex items-center justify-center">
                 <img
                   src={member.imageSrc}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-700"
+                  className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-700"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   MessageSquare, ArrowRight, ArrowDownToLine, ChevronDown,
-  Terminal, Cpu, Database, Network, MapPin,
-  GraduationCap, Briefcase, Code2, Rocket, BookOpen, Camera, Heart
+  MapPin, GraduationCap, Briefcase, Code2, Rocket, BookOpen, Camera, Heart
 } from "lucide-react";
 import { profileData } from "@/data/profile";
 
@@ -30,31 +29,9 @@ const previewPhotoIds = [
 ];
 
 export default function Home() {
-  const [loss, setLoss] = useState(0.89);
-  const [accuracy, setAccuracy] = useState(0.32);
-  const [epoch, setEpoch] = useState(1);
-
   const galleryPreviewPhotos = (profileData.photos || [])
     .filter((p) => !p.exclude_from_gallery && previewPhotoIds.includes(p.id))
     .slice(0, 6);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setEpoch((prev) => {
-        if (prev >= 100) return 1;
-        setLoss((current) => {
-          const next = current - current * 0.05 + (Math.random() - 0.5) * 0.01;
-          return parseFloat(Math.max(0.02, next).toFixed(4));
-        });
-        setAccuracy((current) => {
-          const next = current + (1 - current) * 0.04 + (Math.random() - 0.5) * 0.005;
-          return parseFloat(Math.min(0.998, next).toFixed(4));
-        });
-        return prev + 1;
-      });
-    }, 2000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="relative min-h-screen w-full bg-background overflow-x-hidden">
@@ -74,8 +51,8 @@ export default function Home() {
             className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 max-w-2xl"
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full text-accent font-semibold text-xs tracking-wider uppercase mb-2">
-              <Cpu size={14} className="animate-spin-slow" />
-              <span>AI & Machine Learning Infrastructure</span>
+              <MapPin size={13} />
+              <span>Pune, Maharashtra &nbsp;·&nbsp; Originally from Bihar</span>
             </div>
 
             <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight text-foreground tracking-tight">
@@ -92,11 +69,7 @@ export default function Home() {
             </div>
 
             <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-              AI • Machine Learning • Cloud • DevOps
-              <br />
-              <span className="font-medium text-foreground/90 block mt-2">
-                Building intelligent systems while staying rooted in family values.
-              </span>
+              Passionate about technology, continuous learning, family values, and building meaningful relationships.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
@@ -127,17 +100,18 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Right: Photo + MLOps monitor */}
+          {/* Right: Photo + Personal Info Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="flex-1 w-full max-w-xl flex flex-col gap-6"
+            className="flex-1 w-full max-w-md flex flex-col gap-6 items-center"
           >
-            <div className="relative w-72 h-72 mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-card-border/90 group">
+            {/* Profile Photo */}
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-card-border/90 group">
               <Image
                 src="/images/profile-photo.jpg"
-                alt="Atul Choubey Portrait"
+                alt="Atul Choubey"
                 fill
                 priority
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -145,65 +119,29 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </div>
 
-            {/* MLOps Dashboard */}
-            <div className="w-full glass-panel rounded-2xl shadow-xl overflow-hidden border border-card-border/90 relative">
-              <div className="bg-secondary/40 px-4 py-2.5 border-b border-card-border/80 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 block" />
-                </div>
-                <span className="text-[10px] font-mono text-muted flex items-center space-x-1">
-                  <Terminal size={10} />
-                  <span>mlops-pipeline-monitor.sh</span>
-                </span>
-                <div className="w-4" />
+            {/* Personal snapshot card */}
+            <div className="w-full glass-panel rounded-2xl border border-card-border/80 p-5 space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: "Current Role", value: "Senior MLOps Engineer" },
+                  { label: "Company", value: "Accenture · UBS" },
+                  { label: "Based In", value: "Pune, Maharashtra" },
+                  { label: "Native Place", value: "Ahirauli, Buxar, Bihar" },
+                  { label: "Experience", value: "6+ Years in Tech" },
+                  { label: "Education", value: "B.Tech IT — CIT, Coimbatore" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="space-y-0.5">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted">{label}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-foreground leading-snug">{value}</p>
+                  </div>
+                ))}
               </div>
-              <div className="p-5 font-mono text-[11px] sm:text-xs space-y-3 text-foreground/90 overflow-x-auto">
-                <div>
-                  <span className="text-accent">$</span> python train_pipeline.py --model transformer-v2
-                </div>
-                <div className="text-muted">
-                  [INFO] Loaded dataset from Bihar Storage Node ({profileData.family.roots.district}).
-                  <br />
-                  [INFO] Initializing {profileData.family.roots.gotra} Gotra constraints check... passed.
-                  <br />
-                  [INFO] Loading MLOps model configuration (UBS/Accenture baseline).
-                </div>
-                <div className="border border-card-border bg-background/50 rounded-xl p-3.5 space-y-2.5 shadow-inner">
-                  <div className="flex items-center justify-between text-[10px]">
-                    <span className="font-semibold text-highlight flex items-center gap-1">
-                      <Database size={10} className="animate-pulse" />
-                      <span>Training Transformer Model</span>
-                    </span>
-                    <span className="text-muted">Epoch {epoch}/100</span>
-                  </div>
-                  <div className="w-full bg-secondary/60 h-2 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-accent to-highlight"
-                      animate={{ width: `${epoch}%` }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 text-[10px] pt-1">
-                    <div className="flex flex-col bg-background/80 p-1.5 rounded border border-card-border/50">
-                      <span className="text-muted">Val Loss</span>
-                      <span className="text-red-400 font-bold text-xs">{loss}</span>
-                    </div>
-                    <div className="flex flex-col bg-background/80 p-1.5 rounded border border-card-border/50">
-                      <span className="text-muted">Val Accuracy</span>
-                      <span className="text-success font-bold text-xs">{(accuracy * 100).toFixed(2)}%</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2 text-muted text-[10px]">
-                  <Network size={12} className="text-accent animate-pulse" />
-                  <span>Serving API endpoint: active on kubernetes-cluster</span>
-                </div>
-                <div className="text-success flex items-center space-x-1.5 text-[10px]">
-                  <span className="inline-block w-2 h-2 rounded-full bg-success animate-ping" />
-                  <span>System Health: 100% | Latency: 4ms | Ready</span>
-                </div>
+              <div className="border-t border-card-border/40 pt-3 flex flex-wrap gap-2">
+                {["MLOps", "Cloud", "AI Platforms", "Family Values", "Guitar", "Travel"].map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 text-[11px] font-semibold bg-secondary/70 text-muted rounded-lg border border-card-border/50">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -339,7 +277,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { name: "Shri Manoranjan Choubey", relation: "Father", role: "Income Tax Advocate", img: "/images/papa-profile-photo.jpg" },
+              { name: "Shri Manoranjan Choubey", relation: "Father", role: "Income Tax Advocate", img: "/images/me-with-my-father-add-this-photo-in-family-intro.jpg" },
               { name: "Smt. Anita Choubey", relation: "Mother", role: "Homemaker", img: "/images/mom-profile-photo.jpg" },
               { name: "Rahul Choubey", relation: "Brother", role: "Advocate", img: "/images/rahul-profile-photo.jpg" },
             ].map((member, idx) => (
@@ -352,13 +290,13 @@ export default function Home() {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="glass-panel p-5 rounded-2xl border border-card-border/80 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 flex flex-col items-center text-center space-y-4 group shadow-sm"
               >
-                <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent/25 group-hover:border-accent/60 transition-colors shadow-lg">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent/25 group-hover:border-accent/60 transition-colors shadow-lg bg-secondary/20">
                   <Image
                     src={member.img}
                     alt={member.name}
                     fill
                     sizes="96px"
-                    className="object-cover object-top"
+                    className="object-contain object-center"
                   />
                 </div>
                 <div className="space-y-1">
@@ -413,7 +351,7 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="font-display font-extrabold text-3xl sm:text-4xl text-foreground tracking-tight"
             >
-              Life in Frames
+              Life Through Pictures
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}

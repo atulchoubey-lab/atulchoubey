@@ -250,242 +250,18 @@ export const profileData = {
   },
   "photos": [
     {
-      "id": "photo_382863b1-aefa-4dff-b278-a8778022be94",
-      "src": "/images/382863b1-aefa-4dff-b278-a8778022be94.jpg",
-      "title": "382863B1 Aefa 4Dff B278 A8778022Be94",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 1341,
-      "height": 716,
-      "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0175",
-      "src": "/images/IMG_0175.jpg",
-      "title": "Img_0175",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 2164,
-      "height": 3624,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0468",
-      "src": "/images/IMG_0468.jpg",
-      "title": "Img_0468",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0493",
-      "src": "/images/IMG_0493.jpg",
-      "title": "Img_0493",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 2400,
-      "height": 2400,
-      "orientation": "square",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0501",
-      "src": "/images/IMG_0501.jpg",
-      "title": "Img_0501",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0503",
-      "src": "/images/IMG_0503.jpg",
-      "title": "Img_0503",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 970,
-      "height": 1559,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_0553",
-      "src": "/images/IMG_0553.jpg",
-      "title": "Img_0553",
-      "description": "A personal photograph.",
-      "category": "Personal",
+      "id": "photo_family-photo-at-mahavir-mandir-patna",
+      "src": "/images/family-photo-at-mahavir-mandir-patna.jpg",
+      "title": "Family at Mahavir Mandir, Patna",
+      "description": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
+      "category": "Family",
       "width": 4032,
       "height": 3024,
       "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_2004_Original",
-      "src": "/images/IMG_2004_Original.jpg",
-      "title": "Img_2004_Original",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 4898,
-      "height": 3265,
-      "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_2549",
-      "src": "/images/IMG_2549.jpg",
-      "title": "Img_2549",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_2614",
-      "src": "/images/IMG_2614.jpg",
-      "title": "Img_2614",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 5712,
-      "height": 4284,
-      "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_2670",
-      "src": "/images/IMG_2670.jpg",
-      "title": "Img_2670",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_2677",
-      "src": "/images/IMG_2677.jpg",
-      "title": "Img_2677",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_IMG_4696",
-      "src": "/images/IMG_4696.jpg",
-      "title": "Img_4696",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_Profile_Photo",
-      "src": "/images/Profile_Photo.jpg",
-      "title": "Profile_Photo",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 1013,
-      "height": 1058,
-      "orientation": "square",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero",
-      "src": "/images/adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero.jpg",
-      "title": "Adiyogi, Coimbatore",
-      "description": "The iconic Adiyogi Shiva statue near Coimbatore \u2014 a memorable place from my engineering years.",
-      "category": "Lifestyle",
-      "width": 1280,
-      "height": 720,
-      "orientation": "landscape",
       "featured": true,
-      "display_section": "journey",
-      "display_priority": 2,
-      "exclude_from_gallery": true
-    },
-    {
-      "id": "photo_afd5d20d-4501-4d07-835c-d411c97e4461_Original",
-      "src": "/images/afd5d20d-4501-4d07-835c-d411c97e4461_Original.jpg",
-      "title": "Afd5D20D 4501 4D07 835C D411C97E4461_Original",
-      "description": "A personal photograph.",
-      "category": "Personal",
-      "width": 531,
-      "height": 871,
-      "orientation": "portrait",
-      "featured": false,
       "display_section": "gallery",
-      "display_priority": 3,
+      "display_priority": 1,
       "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_bosch-building",
-      "src": "/images/bosch-building.jpg",
-      "title": "Bosch Office, Coimbatore",
-      "description": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
-      "category": "Personal",
-      "width": 1360,
-      "height": 1020,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "journey",
-      "display_priority": 2,
-      "exclude_from_gallery": true
     },
     {
       "id": "photo_cit",
@@ -502,82 +278,12 @@ export const profileData = {
       "exclude_from_gallery": true
     },
     {
-      "id": "photo_family-photo-at-mahavir-mandir-patna",
-      "src": "/images/family-photo-at-mahavir-mandir-patna.jpg",
-      "title": "Family at Mahavir Mandir, Patna",
-      "description": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
-      "category": "Family",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "gallery",
-      "display_priority": 1,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-at-kalycito-office-early-days",
-      "src": "/images/me-at-kalycito-office-early-days.jpg",
-      "title": "Early Days at Kalycito",
-      "description": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
-      "category": "Personal",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "journey",
-      "display_priority": 1,
-      "exclude_from_gallery": true
-    },
-    {
-      "id": "photo_me-for-journey",
-      "src": "/images/me-for-journey.jpg",
-      "title": "Guitar & Leisure",
-      "description": "Playing acoustic guitar during my leisure hours in early career days.",
-      "category": "Lifestyle",
-      "width": 2356,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": true,
-      "display_section": "journey",
-      "display_priority": 1,
-      "exclude_from_gallery": true
-    },
-    {
       "id": "photo_me-in-chath-puja",
       "src": "/images/me-in-chath-puja.jpg",
       "title": "Celebrating Chhath Puja",
       "description": "Observing traditional Chhath Puja rituals in Patna, keeping our family heritage alive.",
       "category": "Family",
       "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": true,
-      "display_section": "gallery",
-      "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-school-time",
-      "src": "/images/me-school-time.jpg",
-      "title": "School Days in Patna",
-      "description": "A throwback from my school days at Radiant School in Patna.",
-      "category": "Personal",
-      "width": 640,
-      "height": 1280,
-      "orientation": "portrait",
-      "featured": true,
-      "display_section": "journey",
-      "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-with-guitar",
-      "src": "/images/me-with-guitar.jpg",
-      "title": "Guitar Sessions",
-      "description": "Playing acoustic guitar \u2014 music keeps me grounded.",
-      "category": "Lifestyle",
-      "width": 2356,
       "height": 4032,
       "orientation": "portrait",
       "featured": true,
@@ -611,20 +317,6 @@ export const profileData = {
       "featured": true,
       "display_section": "gallery",
       "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-with-my-brother-grand-father-and-grand-mother",
-      "src": "/images/me-with-my-brother-grand-father-and-grand-mother.jpg",
-      "title": "With Brother & Grandparents",
-      "description": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
-      "category": "Family",
-      "width": 4898,
-      "height": 3265,
-      "orientation": "landscape",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
       "exclude_from_gallery": false
     },
     {
@@ -667,90 +359,6 @@ export const profileData = {
       "featured": true,
       "display_section": "family",
       "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-with-my-mom-in-isha-yoga",
-      "src": "/images/me-with-my-mom-in-isha-yoga.jpg",
-      "title": "At Isha Yoga with Maa",
-      "description": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
-      "category": "Family",
-      "width": 3024,
-      "height": 4032,
-      "orientation": "portrait",
-      "featured": true,
-      "display_section": "gallery",
-      "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me-with-my-pug-muffy",
-      "src": "/images/me-with-my-pug-muffy.jpg",
-      "title": "My Pug, Muffy",
-      "description": "A happy moment with my beloved pug dog, Muffy.",
-      "category": "Lifestyle",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "gallery",
-      "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me",
-      "src": "/images/me.jpg",
-      "title": "Atul Choubey",
-      "description": "A candid portrait.",
-      "category": "Personal",
-      "width": 5712,
-      "height": 4284,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "about",
-      "display_priority": 1,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_me2",
-      "src": "/images/me2.jpg",
-      "title": "In My Element",
-      "description": "A candid personal moment reflecting focus and energy.",
-      "category": "Personal",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "gallery",
-      "display_priority": 2,
-      "exclude_from_gallery": false
-    },
-    {
-      "id": "photo_mom-profile-photo",
-      "src": "/images/mom-profile-photo.jpg",
-      "title": "Smt. Anita Choubey",
-      "description": "My mother, Smt. Anita Choubey, Homemaker.",
-      "category": "Family",
-      "width": 4032,
-      "height": 3024,
-      "orientation": "landscape",
-      "featured": true,
-      "display_section": "family",
-      "display_priority": 1,
-      "exclude_from_gallery": true
-    },
-    {
-      "id": "photo_my-car",
-      "src": "/images/my-car.jpg",
-      "title": "Road Trips & Travel",
-      "description": "My car \u2014 a symbol of my love for road trips and exploring new places.",
-      "category": "Lifestyle",
-      "width": 2632,
-      "height": 3665,
-      "orientation": "portrait",
-      "featured": false,
-      "display_section": "gallery",
-      "display_priority": 3,
       "exclude_from_gallery": false
     },
     {
@@ -822,6 +430,174 @@ export const profileData = {
       "display_section": "journey",
       "display_priority": 2,
       "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero",
+      "src": "/images/adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero.jpg",
+      "title": "Adiyogi, Coimbatore",
+      "description": "The iconic Adiyogi Shiva statue near Coimbatore \u2014 a memorable place from my engineering years.",
+      "category": "Lifestyle",
+      "width": 1280,
+      "height": 720,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "journey",
+      "display_priority": 2,
+      "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_bosch-building",
+      "src": "/images/bosch-building.jpg",
+      "title": "Bosch Office, Coimbatore",
+      "description": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
+      "category": "Personal",
+      "width": 1360,
+      "height": 1020,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "journey",
+      "display_priority": 2,
+      "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_me-at-kalycito-office-early-days",
+      "src": "/images/me-at-kalycito-office-early-days.jpg",
+      "title": "Early Days at Kalycito",
+      "description": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
+      "category": "Personal",
+      "width": 4032,
+      "height": 3024,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "journey",
+      "display_priority": 1,
+      "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_me-with-my-brother-grand-father-and-grand-mother",
+      "src": "/images/me-with-my-brother-grand-father-and-grand-mother.jpg",
+      "title": "With Brother & Grandparents",
+      "description": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
+      "category": "Family",
+      "width": 4898,
+      "height": 3265,
+      "orientation": "landscape",
+      "featured": false,
+      "display_section": "gallery",
+      "display_priority": 3,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_me-with-my-mom-in-isha-yoga",
+      "src": "/images/me-with-my-mom-in-isha-yoga.jpg",
+      "title": "At Isha Yoga with Maa",
+      "description": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
+      "category": "Family",
+      "width": 3024,
+      "height": 4032,
+      "orientation": "portrait",
+      "featured": true,
+      "display_section": "gallery",
+      "display_priority": 2,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_me-with-my-pug-muffy",
+      "src": "/images/me-with-my-pug-muffy.jpg",
+      "title": "My Pug, Muffy",
+      "description": "A happy moment with my beloved pug dog, Muffy.",
+      "category": "Lifestyle",
+      "width": 4032,
+      "height": 3024,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "gallery",
+      "display_priority": 2,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_me",
+      "src": "/images/me.jpg",
+      "title": "Atul Choubey",
+      "description": "A candid portrait.",
+      "category": "Personal",
+      "width": 5712,
+      "height": 4284,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "about",
+      "display_priority": 1,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_me2",
+      "src": "/images/me2.jpg",
+      "title": "In My Element",
+      "description": "A candid personal moment reflecting focus and energy.",
+      "category": "Personal",
+      "width": 4032,
+      "height": 3024,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "gallery",
+      "display_priority": 2,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_me-for-journey",
+      "src": "/images/me-for-journey.jpg",
+      "title": "Guitar & Leisure",
+      "description": "Playing acoustic guitar during my leisure hours in early career days.",
+      "category": "Lifestyle",
+      "width": 2356,
+      "height": 4032,
+      "orientation": "portrait",
+      "featured": true,
+      "display_section": "journey",
+      "display_priority": 1,
+      "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_me-school-time",
+      "src": "/images/me-school-time.jpg",
+      "title": "School Days in Patna",
+      "description": "A throwback from my school days at Radiant School in Patna.",
+      "category": "Personal",
+      "width": 640,
+      "height": 1280,
+      "orientation": "portrait",
+      "featured": true,
+      "display_section": "journey",
+      "display_priority": 2,
+      "exclude_from_gallery": false
+    },
+    {
+      "id": "photo_mom-profile-photo",
+      "src": "/images/mom-profile-photo.jpg",
+      "title": "Smt. Anita Choubey",
+      "description": "My mother, Smt. Anita Choubey, Homemaker.",
+      "category": "Family",
+      "width": 4032,
+      "height": 3024,
+      "orientation": "landscape",
+      "featured": true,
+      "display_section": "family",
+      "display_priority": 1,
+      "exclude_from_gallery": true
+    },
+    {
+      "id": "photo_my-car",
+      "src": "/images/my-car.jpg",
+      "title": "Road Trips & Travel",
+      "description": "My car \u2014 a symbol of my love for road trips and exploring new places.",
+      "category": "Lifestyle",
+      "width": 2632,
+      "height": 3665,
+      "orientation": "portrait",
+      "featured": false,
+      "display_section": "gallery",
+      "display_priority": 3,
+      "exclude_from_gallery": false
     }
   ],
   "certificates": [
@@ -870,191 +646,15 @@ export const profileData = {
 
 export const imageManifest = [
   {
-    "src": "/images/382863b1-aefa-4dff-b278-a8778022be94.jpg",
-    "category": "Personal",
-    "display_title": "382863B1 Aefa 4Dff B278 A8778022Be94",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
+    "src": "/images/family-photo-at-mahavir-mandir-patna.jpg",
+    "category": "Family",
+    "display_title": "Family at Mahavir Mandir, Patna",
+    "display_caption": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
+    "display_priority": 1,
     "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0175.jpg",
-    "category": "Personal",
-    "display_title": "Img_0175",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0468.jpg",
-    "category": "Personal",
-    "display_title": "Img_0468",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0493.jpg",
-    "category": "Personal",
-    "display_title": "Img_0493",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "square",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0501.jpg",
-    "category": "Personal",
-    "display_title": "Img_0501",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0503.jpg",
-    "category": "Personal",
-    "display_title": "Img_0503",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_0553.jpg",
-    "category": "Personal",
-    "display_title": "Img_0553",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_2004_Original.jpg",
-    "category": "Personal",
-    "display_title": "Img_2004_Original",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_2549.jpg",
-    "category": "Personal",
-    "display_title": "Img_2549",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_2614.jpg",
-    "category": "Personal",
-    "display_title": "Img_2614",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_2670.jpg",
-    "category": "Personal",
-    "display_title": "Img_2670",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_2677.jpg",
-    "category": "Personal",
-    "display_title": "Img_2677",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/IMG_4696.jpg",
-    "category": "Personal",
-    "display_title": "Img_4696",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/Profile_Photo.jpg",
-    "category": "Personal",
-    "display_title": "Profile_Photo",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "square",
-    "featured": false,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero.jpg",
-    "category": "Lifestyle",
-    "display_title": "Adiyogi, Coimbatore",
-    "display_caption": "The iconic Adiyogi Shiva statue near Coimbatore \u2014 a memorable place from my engineering years.",
-    "display_priority": 2,
-    "display_section": "journey",
     "portrait_or_landscape": "landscape",
     "featured": true,
-    "exclude_from_gallery": true
-  },
-  {
-    "src": "/images/afd5d20d-4501-4d07-835c-d411c97e4461_Original.jpg",
-    "category": "Personal",
-    "display_title": "Afd5D20D 4501 4D07 835C D411C97E4461_Original",
-    "display_caption": "A personal photograph.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
     "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/bosch-building.jpg",
-    "category": "Personal",
-    "display_title": "Bosch Office, Coimbatore",
-    "display_caption": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
-    "display_priority": 2,
-    "display_section": "journey",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": true
   },
   {
     "src": "/images/cit.jpg",
@@ -1068,65 +668,10 @@ export const imageManifest = [
     "exclude_from_gallery": true
   },
   {
-    "src": "/images/family-photo-at-mahavir-mandir-patna.jpg",
-    "category": "Family",
-    "display_title": "Family at Mahavir Mandir, Patna",
-    "display_caption": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
-    "display_priority": 1,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-at-kalycito-office-early-days.jpg",
-    "category": "Personal",
-    "display_title": "Early Days at Kalycito",
-    "display_caption": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
-    "display_priority": 1,
-    "display_section": "journey",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": true
-  },
-  {
-    "src": "/images/me-for-journey.jpg",
-    "category": "Lifestyle",
-    "display_title": "Guitar & Leisure",
-    "display_caption": "Playing acoustic guitar during my leisure hours in early career days.",
-    "display_priority": 1,
-    "display_section": "journey",
-    "portrait_or_landscape": "portrait",
-    "featured": true,
-    "exclude_from_gallery": true
-  },
-  {
     "src": "/images/me-in-chath-puja.jpg",
     "category": "Family",
     "display_title": "Celebrating Chhath Puja",
     "display_caption": "Observing traditional Chhath Puja rituals in Patna, keeping our family heritage alive.",
-    "display_priority": 2,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-school-time.jpg",
-    "category": "Personal",
-    "display_title": "School Days in Patna",
-    "display_caption": "A throwback from my school days at Radiant School in Patna.",
-    "display_priority": 2,
-    "display_section": "journey",
-    "portrait_or_landscape": "portrait",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-with-guitar.jpg",
-    "category": "Lifestyle",
-    "display_title": "Guitar Sessions",
-    "display_caption": "Playing acoustic guitar \u2014 music keeps me grounded.",
     "display_priority": 2,
     "display_section": "gallery",
     "portrait_or_landscape": "portrait",
@@ -1153,17 +698,6 @@ export const imageManifest = [
     "display_section": "gallery",
     "portrait_or_landscape": "portrait",
     "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-with-my-brother-grand-father-and-grand-mother.jpg",
-    "category": "Family",
-    "display_title": "With Brother & Grandparents",
-    "display_caption": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": false,
     "exclude_from_gallery": false
   },
   {
@@ -1197,72 +731,6 @@ export const imageManifest = [
     "display_section": "family",
     "portrait_or_landscape": "portrait",
     "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-with-my-mom-in-isha-yoga.jpg",
-    "category": "Family",
-    "display_title": "At Isha Yoga with Maa",
-    "display_caption": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
-    "display_priority": 2,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me-with-my-pug-muffy.jpg",
-    "category": "Lifestyle",
-    "display_title": "My Pug, Muffy",
-    "display_caption": "A happy moment with my beloved pug dog, Muffy.",
-    "display_priority": 2,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me.jpg",
-    "category": "Personal",
-    "display_title": "Atul Choubey",
-    "display_caption": "A candid portrait.",
-    "display_priority": 1,
-    "display_section": "about",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/me2.jpg",
-    "category": "Personal",
-    "display_title": "In My Element",
-    "display_caption": "A candid personal moment reflecting focus and energy.",
-    "display_priority": 2,
-    "display_section": "gallery",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": false
-  },
-  {
-    "src": "/images/mom-profile-photo.jpg",
-    "category": "Family",
-    "display_title": "Smt. Anita Choubey",
-    "display_caption": "My mother, Smt. Anita Choubey, Homemaker.",
-    "display_priority": 1,
-    "display_section": "family",
-    "portrait_or_landscape": "landscape",
-    "featured": true,
-    "exclude_from_gallery": true
-  },
-  {
-    "src": "/images/my-car.jpg",
-    "category": "Lifestyle",
-    "display_title": "Road Trips & Travel",
-    "display_caption": "My car \u2014 a symbol of my love for road trips and exploring new places.",
-    "display_priority": 3,
-    "display_section": "gallery",
-    "portrait_or_landscape": "portrait",
-    "featured": false,
     "exclude_from_gallery": false
   },
   {
@@ -1319,6 +787,138 @@ export const imageManifest = [
     "portrait_or_landscape": "landscape",
     "featured": true,
     "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero.jpg",
+    "category": "Lifestyle",
+    "display_title": "Adiyogi, Coimbatore",
+    "display_caption": "The iconic Adiyogi Shiva statue near Coimbatore \u2014 a memorable place from my engineering years.",
+    "display_priority": 2,
+    "display_section": "journey",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/bosch-building.jpg",
+    "category": "Personal",
+    "display_title": "Bosch Office, Coimbatore",
+    "display_caption": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
+    "display_priority": 2,
+    "display_section": "journey",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/me-at-kalycito-office-early-days.jpg",
+    "category": "Personal",
+    "display_title": "Early Days at Kalycito",
+    "display_caption": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
+    "display_priority": 1,
+    "display_section": "journey",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/me-with-my-brother-grand-father-and-grand-mother.jpg",
+    "category": "Family",
+    "display_title": "With Brother & Grandparents",
+    "display_caption": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
+    "display_priority": 3,
+    "display_section": "gallery",
+    "portrait_or_landscape": "landscape",
+    "featured": false,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/me-with-my-mom-in-isha-yoga.jpg",
+    "category": "Family",
+    "display_title": "At Isha Yoga with Maa",
+    "display_caption": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
+    "display_priority": 2,
+    "display_section": "gallery",
+    "portrait_or_landscape": "portrait",
+    "featured": true,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/me-with-my-pug-muffy.jpg",
+    "category": "Lifestyle",
+    "display_title": "My Pug, Muffy",
+    "display_caption": "A happy moment with my beloved pug dog, Muffy.",
+    "display_priority": 2,
+    "display_section": "gallery",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/me.jpg",
+    "category": "Personal",
+    "display_title": "Atul Choubey",
+    "display_caption": "A candid portrait.",
+    "display_priority": 1,
+    "display_section": "about",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/me2.jpg",
+    "category": "Personal",
+    "display_title": "In My Element",
+    "display_caption": "A candid personal moment reflecting focus and energy.",
+    "display_priority": 2,
+    "display_section": "gallery",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/me-for-journey.jpg",
+    "category": "Lifestyle",
+    "display_title": "Guitar & Leisure",
+    "display_caption": "Playing acoustic guitar during my leisure hours in early career days.",
+    "display_priority": 1,
+    "display_section": "journey",
+    "portrait_or_landscape": "portrait",
+    "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/me-school-time.jpg",
+    "category": "Personal",
+    "display_title": "School Days in Patna",
+    "display_caption": "A throwback from my school days at Radiant School in Patna.",
+    "display_priority": 2,
+    "display_section": "journey",
+    "portrait_or_landscape": "portrait",
+    "featured": true,
+    "exclude_from_gallery": false
+  },
+  {
+    "src": "/images/mom-profile-photo.jpg",
+    "category": "Family",
+    "display_title": "Smt. Anita Choubey",
+    "display_caption": "My mother, Smt. Anita Choubey, Homemaker.",
+    "display_priority": 1,
+    "display_section": "family",
+    "portrait_or_landscape": "landscape",
+    "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/my-car.jpg",
+    "category": "Lifestyle",
+    "display_title": "Road Trips & Travel",
+    "display_caption": "My car \u2014 a symbol of my love for road trips and exploring new places.",
+    "display_priority": 3,
+    "display_section": "gallery",
+    "portrait_or_landscape": "portrait",
+    "featured": false,
+    "exclude_from_gallery": false
   },
   {
     "src": "/images/contextual/patna-skyline.png",
@@ -1399,4 +999,136 @@ export const imageManifest = [
   }
 ];
 
-export const resumeText = ``;
+export const resumeText = `ATUL CHOUBEY
+MLOps Engineer
++91-9142758697
+cse.atul.choubey@gmail.com
+linkedin.com/in/atul-choubey-1341a4375
+Pune, India
+SUMMARY
+I am an MLOps Engineer with over 6 years of experience building machine learning
+infrastructure and CI/CD automation systems. My expertise lies in designing
+configuration-driven ML pipelines, MLflow-based experiment tracking, model registry
+workflows, and developing internal tooling that simplifies complex APIs for engineering teams.
+I have implemented MLOps solutions across banking (UBS) and automotive (Bosch),
+consistently improving efficiency and reliability.
+EXPERIENCE
+Senior MLOps / ML Platform Engineer
+Accenture (Client: UBS)
+01/2025 – Present      Pune, India
+Accenture is a global professional services company specializing in digital, cloud, and security
+solutions, with deep expertise in technology and operations.
+
+Architected configuration-driven ML training pipelines using GitLab CI/CD, CDSW, and
+MLflow — automating model training, experiment tracking, and artifact versioning across
+multiple environments.
+
+Eliminated branch-per-model deployment anti-pattern by redesigning to a single-branch
+parameterised CI/CD system, enabling N-model × M-environment deployments with zero
+additional pipeline config.
+
+Developed aes_cdsw_api, an internal Python library abstracting CDSW deployment APIs
+— standardising model release operations invoked directly from GitLab CI pipelines.
+
+Introduced Git submodules to decouple data-science code from platform repos, enabling
+independent versioning and eliminating cross-repo coupling.
+
+Designed dual-workspace Azure ML architecture (training + inference) with controlled
+model promotion; automated workflows using Ansible-based orchestration.
+
+Resolved ML platform dependency issues via uv-based package management; led
+CDSW-to-Azure ML migration evaluation.
+Senior Software Engineer – DevOps & Python Automation
+Bosch Global Software Technology
+01/2023 – 12/2024      Pune, India
+Bosch Global Software Technology provides software solutions and engineering services across a
+wide spectrum of industries.
+
+Built Python automation integrating RTC, RQM, and Jenkins REST APIs to aggregate
+CI/CD operational metrics via real-time Grafana and InfluxDB dashboards.
+
+Maintained 50+ CI build pipelines; reduced average failure resolution time to ~20 minutes
+through systematic Python-based triage tooling.
+
+Developed data ingestion utilities improving observability of internal engineering workflows
+across large-scale enterprise build infrastructure.
+DevOps & Platform Engineer
+Kalycito Infotech
+10/2020 – 12/2022      Pune, India
+Kalycito Infotech is a technology services company specialized in software development and IT
+services.
+
+Deployed and managed multi-node Kubernetes clusters supporting 20+ containerised
+services at 99.9% uptime; configured autoscaling, resource quotas, and workload
+scheduling.
+
+Built Docker packaging pipelines for consistent deployment across heterogeneous
+environments; developed Python utilities for platform reliability testing.
+EDUCATION
+B.Tech
+Coimbatore Institute of Technology
+08/2016 – 05/2020      Coimbatore, India
+KEY ACHIEVEMENTS
+■ Innovative ML Pipeline
+Design and Automation
+Successfully redesigned multi-
+model deployment and developed a
+Python library that significantly
+streamlined the model release
+process, reflecting ability to
+innovate and optimize complex
+systems.
+SKILLS
+Gmail
+GitHub
+Python
+Azure ML
+MLflow
+GitLab CI
+Kubernetes
+Ansible
+Bash
+SQL
+YAML
+PyTorch
+Scikit-Learn
+Jenkins
+Docker
+Git
+Linux
+Grafana
+InfluxDB
+Azure
+RTC
+REST
+Node.js
+PROJECTS
+Config-Driven ML Platform — GitLab
+CI/CD + CDSW + Azure ML
+01/2024 – 12/2025
+Configuration-Driven ML Platform aimed at
+automating model training pipelines.
+
+Redesigned multi-model deployment from
+branch-per-model to single parameterised
+pipeline; built aes_cdsw_api library
+reducing releases from manual to fully
+automated.
+
+Designed CDSW-to-Azure ML migration
+with dual-workspace promotion model
+and Ansible orchestration layer.
+Python API Integration & CI Metrics
+Automation — Bosch
+01/2023 – 12/2024
+Python API Integration project focused on
+automating CI metrics.
+
+Built Python integration across RTC,
+RQM, and Jenkins APIs automating data
+collection for 50+ pipelines; replaced
+manual reporting with live Grafana
+dashboards.
+linkedin.com/in/atul-choubey-1341a4375
+
+`;

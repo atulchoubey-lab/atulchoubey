@@ -211,6 +211,82 @@ SLUG_MAPPINGS = {
         "category": "Lifestyle", "display_section": "gallery",
         "featured": True, "exclude_from_gallery": False, "display_priority": 2
     },
+    # Legacy/raw files from initial commit — hidden from gallery
+    "382863b1-aefa-4dff-b278-a8778022be94": {
+        "title": "Personal Moment", "description": "A personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0175": {
+        "title": "Family Gathering", "description": "A cherished moment with family.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0468": {
+        "title": "A Memorable Day", "description": "A meaningful personal moment.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0493": {
+        "title": "Family Time", "description": "A warm family moment.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0501": {
+        "title": "A Personal Moment", "description": "A candid personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0503": {
+        "title": "With Family", "description": "A moment with family.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_0553": {
+        "title": "A Cherished Moment", "description": "A personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_2004_Original": {
+        "title": "A Special Occasion", "description": "A memorable personal moment.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_2549": {
+        "title": "With Loved Ones", "description": "A treasured moment.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_2614": {
+        "title": "A Memorable Moment", "description": "A personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_2670": {
+        "title": "Family Time", "description": "A warm moment with family.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_2677": {
+        "title": "A Personal Day", "description": "A candid personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "IMG_4696": {
+        "title": "Special Gathering", "description": "A meaningful family moment.",
+        "category": "Family", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "Profile_Photo": {
+        "title": "Portrait", "description": "A personal portrait.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "afd5d20d-4501-4d07-835c-d411c97e4461_Original": {
+        "title": "A Personal Photograph", "description": "A personal photograph.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
 }
 
 def build_photo_entry(slug, dest_path):
