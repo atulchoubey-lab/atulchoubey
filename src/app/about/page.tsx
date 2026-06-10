@@ -108,9 +108,14 @@ export default function About() {
       description: "I currently work as a Senior MLOps / ML Platform Engineer at Accenture, supporting our client UBS in Pune. I build configuration-driven machine learning pipelines using GitLab CI/CD, CDSW, and MLflow. I love working at the intersection of AI platforms, cloud scalability, and automation, helping data scientists deploy and monitor models reliably.",
       visuals: [
         {
+          src: "/images/ubs-pune.jpg",
+          title: "UBS Office, Pune",
+          caption: "The UBS campus in Pune where I work on ML platforms and AI infrastructure."
+        },
+        {
           src: "/images/contextual/ubs-fintech.png",
-          title: "UBS Fintech Platform",
-          caption: "Building machine learning platforms and container architectures at UBS."
+          title: "MLOps at UBS",
+          caption: "Building configuration-driven machine learning pipelines and container architectures."
         }
       ]
     },
