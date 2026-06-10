@@ -651,7 +651,7 @@ chunks.append({
 })
 
 # Family Chunk
-family_info = f"I come from a Brahmin family originating from Ahirauli village in Buxar district, Bihar. Our family Gotra is Bhargav. My father is Shri Manoranjan Choubey, who is an Income Tax Advocate. My mother is Smt. Anita Choubey, who is a Homemaker. My brother is Rahul Choubey, who is also an Advocate. My late grandfather was Shri S.K. Choubey, a retired IRS Officer. Our family values prioritize integrity, education, respect, and tradition."
+family_info = "I come from a Brahmin family originally from Ahirauli village in Buxar district, Bihar. My father, Shri Manoranjan Choubey, is an Income Tax Advocate. My mother, Anita Choubey, is a homemaker and has always been a strong source of love and support for our family. My brother, Rahul Choubey, is an Advocate. My grandfather, Shri SK Choubey, was a retired IRS Officer. Our family Gotra is Bhargav, and our values are rooted in integrity, education, respect, and tradition."
 chunks.append({
     "id": "chunk_family",
     "category": "family",

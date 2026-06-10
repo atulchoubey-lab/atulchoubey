@@ -13,23 +13,23 @@ interface KnowledgeChunk {
 
 // Synonym expansion — maps short/informal words to richer search terms
 const SYNONYM_MAP: Record<string, string> = {
-  mom: "mother anita family",
-  mum: "mother anita family",
-  mummy: "mother anita family",
-  maa: "mother anita family",
-  mama: "mother anita family",
-  dad: "father manoranjan family",
-  papa: "father manoranjan family",
-  baba: "father manoranjan family",
-  brother: "rahul brother family advocate",
-  siblings: "brother rahul family",
+  mom: "mother anita homemaker",
+  mum: "mother anita homemaker",
+  mummy: "mother anita homemaker",
+  maa: "mother anita homemaker",
+  mama: "mother anita homemaker",
+  dad: "father manoranjan advocate income",
+  papa: "father manoranjan advocate income",
+  baba: "father manoranjan advocate",
+  brother: "rahul brother advocate",
+  siblings: "brother rahul sibling",
   family: "family mother father brother parents",
-  parents: "mother father family",
+  parents: "mother father parents",
   relatives: "family mother father brother roots",
-  roots: "family buxar ahirauli village Bihar",
-  village: "ahirauli buxar village family",
-  gotra: "bhargav gotra family brahmin",
-  caste: "brahmin family gotra",
+  roots: "buxar ahirauli village gotra",
+  village: "ahirauli buxar village",
+  gotra: "bhargav gotra brahmin",
+  caste: "brahmin gotra bhargav",
   job: "career engineer professional role",
   work: "career professional role experience",
   profession: "career engineer role professional",
@@ -111,6 +111,48 @@ function expandQuery(raw: string): string {
   return Array.from(expanded).join(" ");
 }
 
+// Normalize third-person queries ("where did he study", "who is his mom") → first-person context
+function normalizeQuery(raw: string): string {
+  return raw
+    .replace(/\bhe\b/gi, "you")
+    .replace(/\bhis\b/gi, "your")
+    .replace(/\bhim\b/gi, "you")
+    .replace(/\batul'?s?\b/gi, "your")
+    .replace(/\batul\b/gi, "you");
+}
+
+// Smart fallback: finds sentences most relevant to the query rather than always returning first 2
+function extractRelevantSentences(chunks: KnowledgeChunk[], expandedQuery: string): string {
+  const queryWords = expandedQuery.match(/\b[a-z]{3,}\b/g) || [];
+  const scored: { text: string; score: number }[] = [];
+
+  for (const chunk of chunks) {
+    const sentences = chunk.text.match(/[^.!?]+[.!?]+/g) || [chunk.text];
+    for (const sentence of sentences) {
+      const lower = sentence.toLowerCase();
+      let score = 0;
+      for (const word of queryWords) {
+        if (lower.includes(word)) score++;
+      }
+      if (score > 0) scored.push({ text: sentence.trim(), score });
+    }
+  }
+
+  if (scored.length === 0) {
+    // No keyword match — return first 2 sentences of best chunk
+    const fallbackSentences = chunks[0].text.match(/[^.!?]+[.!?]+/g) || [chunks[0].text];
+    return fallbackSentences.slice(0, 2).join(" ").trim();
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+  // Return top 2 most relevant sentences
+  return scored
+    .slice(0, 2)
+    .map((s) => s.text)
+    .join(" ")
+    .trim();
+}
+
 function scoreTFIDF(query: string, chunk: KnowledgeChunk): number {
   const expanded = expandQuery(query);
   const queryWords = expanded.match(/\b[a-z]{3,}\b/g) || [];
@@ -147,7 +189,9 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
     const lastMessage = (messages[messages.length - 1]?.content || "").trim();
-    const cleanQuery = lastMessage.toLowerCase().replace(/[?.,!]/g, "").trim();
+    // Normalize third-person ("his mom", "where he studied") → first-person context before processing
+    const normalizedMessage = normalizeQuery(lastMessage);
+    const cleanQuery = normalizedMessage.toLowerCase().replace(/[?.,!]/g, "").trim();
 
     // Conversational short-circuit replies
     const GREETINGS = new Set(["hi", "hello", "hey", "greetings", "good morning", "good evening", "good afternoon", "namaste", "yo", "hiya", "howdy", "sup"]);
@@ -195,7 +239,7 @@ export async function POST(req: NextRequest) {
         return true;
       })
       .map((chunk) => {
-        let score = scoreTFIDF(lastMessage, chunk);
+        let score = scoreTFIDF(normalizedMessage, chunk);
         // Boost matching category chunks so the right topic always wins
         if (detectedCategory && chunk.category === detectedCategory) {
           score = score * 3 + 0.15;
@@ -251,10 +295,8 @@ export async function POST(req: NextRequest) {
       console.error("Gemini error:", geminiRes.status, errBody);
     }
 
-    // Fallback — Gemini unavailable: use first 2 sentences from best chunk, naturally phrased
-    const best = topChunks[0];
-    const sentences = best.text.match(/[^.!?]+[.!?]+/g) || [best.text];
-    return streamText(sentences.slice(0, 2).join(" ").trim());
+    // Fallback — Gemini unavailable: extract the most relevant sentences from chunks
+    return streamText(extractRelevantSentences(topChunks, expandQuery(cleanQuery)));
 
   } catch (error: unknown) {
     console.error("Chat route error:", error);

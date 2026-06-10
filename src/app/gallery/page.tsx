@@ -154,7 +154,7 @@ export default function Gallery() {
             <span>Gallery</span>
           </motion.div>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground">
-            Life in Frames
+            Life Through Pictures
           </h1>
           <p className="text-base sm:text-lg text-muted">
             A curated snapshot of my personal experiences, family moments, and travels.
