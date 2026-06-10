@@ -460,9 +460,9 @@ profile_data = {
         "birth_display": "15th March 1997",
         "birth_place": "Patna, Bihar",
         "age": 29,  # Compiled dynamically relative to 2026 local time
-        "height": "5'10\"",
+        "height": "5'7\"",
         "gothra": "Bhargav",
-        "rashi": "Vrishabha (Taurus)",
+        "rashi": "Meena (Pisces)",
         "native_place": "Ahirauli, Buxar, Bihar",
         "current_city": "Pune, India",
         "email": "cse.atul.choubey@gmail.com",

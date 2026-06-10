@@ -79,22 +79,28 @@ export async function POST(req: NextRequest) {
     // Use Gemini
     const geminiKey = process.env.GEMINI_API_KEY;
     if (geminiKey) {
-      const geminiMessages = messages.map((m: { role: string; content: string }) => ({
-        role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content }],
-      }));
+      // Build contents array — merge system prompt into first user turn for compatibility
+      const geminiContents = messages.map((m: { role: string; content: string }, idx: number) => {
+        const role = m.role === "assistant" ? "model" : "user";
+        let text = m.content;
+        // Prepend system context to the first user message
+        if (idx === 0 && role === "user") {
+          text = `[Context for this conversation]\n${fullSystemPrompt}\n\n[User question]\n${m.content}`;
+        }
+        return { role, parts: [{ text }] };
+      });
 
       const geminiBody = {
-        system_instruction: { parts: [{ text: fullSystemPrompt }] },
-        contents: geminiMessages,
+        contents: geminiContents,
         generationConfig: {
           temperature: 0.4,
           maxOutputTokens: 400,
         },
       };
 
+      // Non-streaming call for reliability
       const geminiRes = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${geminiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -102,61 +108,23 @@ export async function POST(req: NextRequest) {
         }
       );
 
-      if (geminiRes.ok && geminiRes.body) {
-        // Transform Gemini SSE → OpenAI-compatible SSE for the frontend
-        const encoder = new TextEncoder();
-        const decoder = new TextDecoder();
-
-        const transformedStream = new ReadableStream({
-          async start(controller) {
-            const reader = geminiRes.body!.getReader();
-            let buffer = "";
-
-            while (true) {
-              const { value, done } = await reader.read();
-              if (done) break;
-              buffer += decoder.decode(value, { stream: true });
-
-              const lines = buffer.split("\n");
-              buffer = lines.pop() ?? "";
-
-              for (const line of lines) {
-                if (!line.startsWith("data: ")) continue;
-                const dataStr = line.slice(6).trim();
-                if (!dataStr || dataStr === "[DONE]") continue;
-
-                try {
-                  const parsed = JSON.parse(dataStr);
-                  const text = parsed?.candidates?.[0]?.content?.parts?.[0]?.text;
-                  if (text) {
-                    const chunk = `data: ${JSON.stringify({
-                      choices: [{ delta: { content: text } }],
-                    })}\n\n`;
-                    controller.enqueue(encoder.encode(chunk));
-                  }
-                } catch {
-                  // skip malformed
-                }
-              }
-            }
-
-            controller.enqueue(encoder.encode("data: [DONE]\n\n"));
-            controller.close();
-          },
-        });
-
-        return new Response(transformedStream, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            Connection: "keep-alive",
-          },
-        });
+      if (geminiRes.ok) {
+        const geminiData = await geminiRes.json();
+        const responseText: string =
+          geminiData?.candidates?.[0]?.content?.parts?.[0]?.text ??
+          "I don't have specific details on that — feel free to ask about my career, family, education, or goals!";
+        return streamText(responseText);
+      } else {
+        const errBody = await geminiRes.text();
+        console.error("Gemini error:", geminiRes.status, errBody);
       }
     }
 
-    // Final fallback — should rarely be hit
-    return streamText("I'm having trouble connecting right now. Please try again in a moment!");
+    // Final fallback — Gemini key missing or API failed
+    const bestChunk = retrievedChunks[0];
+    return streamText(
+      `Based on what I know about myself: ${bestChunk.text.slice(0, 300)}${bestChunk.text.length > 300 ? "..." : ""}`
+    );
 
   } catch (error: unknown) {
     console.error("Chat route error:", error);

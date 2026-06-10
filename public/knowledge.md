@@ -5,9 +5,9 @@
 - **Date of Birth**: 15th March 1997
 - **Birth Place**: Patna, Bihar
 - **Age**: 29 years old
-- **Height**: 5'10"
+- **Height**: 5'7"
 - **Gothra**: Bhargav
-- **Zodiac (Rashi)**: Vrishabha (Taurus)
+- **Zodiac (Rashi)**: Meena (Pisces)
 - **Native Place**: Ahirauli, Buxar, Bihar
 - **Current Location**: Pune, India
 - **Email**: cse.atul.choubey@gmail.com

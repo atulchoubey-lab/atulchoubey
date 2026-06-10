@@ -26,7 +26,7 @@ const previewPhotoIds = [
   "photo_me-with-my-mom-in-isha-yoga",
   "photo_me-with-my-brother-grand-father-and-grand-mother",
   "photo_me-with-my-pug-muffy",
-  "photo_rock-band-performance-at-bosch-employees-interstate-competition",
+  "photo_me-with-my-father-add-this-photo-in-family-intro",
 ];
 
 export default function Home() {
