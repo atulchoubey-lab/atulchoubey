@@ -248,7 +248,22 @@ export async function POST(req: NextRequest) {
       })
       .sort((a, b) => b.score - a.score);
 
-    const topChunks = scored.filter((r) => r.score > 0).slice(0, 3).map((r) => r.chunk);
+    let topChunks = scored.filter((r) => r.score > 0).slice(0, 3).map((r) => r.chunk);
+
+    // No keyword match — query is too generic (e.g. "5 things about atul", "describe yourself").
+    // Pick one representative chunk from each core category so Gemini has full context.
+    if (topChunks.length === 0) {
+      const CORE_CATEGORIES = ["personal", "family", "career", "education", "lifestyle", "goals"];
+      const seen = new Set<string>();
+      topChunks = allChunks
+        .filter((c) => !GALLERY_ONLY_CHUNKS.has(c.id) && CORE_CATEGORIES.includes(c.category))
+        .filter((c) => {
+          if (seen.has(c.category)) return false;
+          seen.add(c.category);
+          return true;
+        })
+        .slice(0, 4);
+    }
 
     if (topChunks.length === 0) {
       return streamText("I don't have specific details on that — feel free to ask about my career, family, education, or goals!");
