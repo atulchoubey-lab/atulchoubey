@@ -287,6 +287,22 @@ SLUG_MAPPINGS = {
         "category": "Personal", "display_section": "hidden",
         "featured": False, "exclude_from_gallery": True, "display_priority": 99
     },
+    # Homepage "Life Beyond Work" section photos — not for gallery
+    "music": {
+        "title": "Music & Hobbies", "description": "Music and hobbies section photo.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "explore": {
+        "title": "Travel & Exploration", "description": "Travel and exploration section photo.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
+    "fitness": {
+        "title": "Fitness & Lifestyle", "description": "Fitness and lifestyle section photo.",
+        "category": "Personal", "display_section": "hidden",
+        "featured": False, "exclude_from_gallery": True, "display_priority": 99
+    },
 }
 
 def build_photo_entry(slug, dest_path):
