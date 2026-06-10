@@ -1,0 +1,143 @@
+{
+  "personal": {
+    "name": "Atul Choubey",
+    "dob": "1997-03-15",
+    "birth_display": "15th March 1997",
+    "birth_place": "Patna, Bihar",
+    "age": 29,
+    "height": "5'10\"",
+    "gothra": "Bhargav",
+    "rashi": "Vrishabha (Taurus)",
+    "native_place": "Ahirauli, Buxar, Bihar",
+    "current_city": "Pune, India",
+    "email": "cse.atul.choubey@gmail.com",
+    "phone": "+91-9142758697",
+    "linkedin": "linkedin.com/in/atul-choubey-1341a4375",
+    "github": "github.com/atulchoubey"
+  },
+  "education": {
+    "ug": {
+      "degree": "B.Tech",
+      "specialization": "Information Technology",
+      "institute": "Coimbatore Institute of Technology, Coimbatore",
+      "university": "Anna University (Autonomous)",
+      "classification": "First Class",
+      "passing_year": "2020",
+      "period": "2016 - 2020"
+    },
+    "hsc": {
+      "board": "CBSE",
+      "school": "Radiant International School, Patna, Bihar",
+      "passing_year": "2015",
+      "result": "Passed"
+    },
+    "sslc": {
+      "board": "CBSE",
+      "school": "Radiant International School, Patna, Bihar",
+      "passing_year": "2013",
+      "cgpa": "9.2"
+    }
+  },
+  "family": {
+    "father": {
+      "name": "Shri Manoranjan Choubey",
+      "occupation": "Income Tax Advocate",
+      "details": "Guiding the family with legal and ethical values."
+    },
+    "mother": {
+      "name": "Smt. Anita Choubey",
+      "occupation": "Homemaker",
+      "details": "Preserving traditional customs and anchoring the home."
+    },
+    "brother": {
+      "name": "Rahul Choubey",
+      "occupation": "Advocate",
+      "details": "Advocating law, justice, and family values."
+    },
+    "roots": {
+      "village": "Ahirauli",
+      "district": "Buxar",
+      "state": "Bihar",
+      "gotra": "Bhargav"
+    },
+    "values": [
+      "Integrity",
+      "Education",
+      "Respect",
+      "Tradition",
+      "Continuous Growth",
+      "Family First"
+    ]
+  },
+  "lifestyle": {
+    "routine": [
+      {
+        "time": "05:30 AM",
+        "activity": "Wake Up",
+        "detail": "Morning mindfulness and planning"
+      },
+      {
+        "time": "06:00 AM - 07:30 AM",
+        "activity": "Gym",
+        "detail": "Strength and physical conditioning"
+      },
+      {
+        "time": "09:00 AM - 06:00 PM",
+        "activity": "Work",
+        "detail": "MLOps pipelines and infrastructure"
+      },
+      {
+        "time": "07:00 PM - 08:30 PM",
+        "activity": "Upskilling",
+        "detail": "Learning research papers and coding"
+      },
+      {
+        "time": "09:00 PM - 10:00 PM",
+        "activity": "Family",
+        "detail": "Connecting with parents and brother"
+      },
+      {
+        "time": "10:30 PM",
+        "activity": "Rest",
+        "detail": "Sleep and recharging"
+      }
+    ],
+    "hobbies": [
+      "Physical Fitness",
+      "Technical Reading",
+      "Travel & Cultural Discovery"
+    ],
+    "values_philosophy": "Discipline is the foundation of mental performance, career achievement, and family harmony."
+  },
+  "goals": [
+    {
+      "title": "AI & Infrastructure Leadership",
+      "time": "1-3 Years",
+      "category": "professional"
+    },
+    {
+      "title": "Supporting Parents (Healthcare & comfort)",
+      "time": "Ongoing",
+      "category": "family"
+    },
+    {
+      "title": "Financial Independence",
+      "time": "3-5 Years",
+      "category": "financial"
+    },
+    {
+      "title": "Healthy Values-driven Family",
+      "time": "1-2 Years",
+      "category": "family"
+    },
+    {
+      "title": "Continuous Learning & Upskilling",
+      "time": "Ongoing",
+      "category": "personal"
+    }
+  ],
+  "marriage_preferences": {
+    "expectations": "Looking for an educated, family-oriented, respectful, and ambitious partner who values mutual growth, integrity, and cultural roots.",
+    "outlook": "A healthy marriage is built on mutual support, trust, and shared values."
+  }
+}

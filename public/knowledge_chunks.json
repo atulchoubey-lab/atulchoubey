@@ -1,0 +1,74 @@
+[
+  {
+    "id": "chunk_personal",
+    "category": "personal",
+    "title": "Personal Details & Background",
+    "text": "I am a 29-year-old MLOps Engineer born in Patna, Bihar on 15th March 1997. I stand 5'10\" tall, belong to the Bhargav Gotra, and have the zodiac sign (Rashi) Vrishabha (Taurus). I am originally from Ahirauli village in Buxar district, Bihar, and currently reside in Pune, India. My email is cse.atul.choubey@gmail.com and phone is +91-9142758697. I value discipline, continuous learning, and family values."
+  },
+  {
+    "id": "chunk_education",
+    "category": "education",
+    "title": "Educational Qualification",
+    "text": "I hold a Bachelor of Technology (B.Tech) in Information Technology from Coimbatore Institute of Technology (Anna University), graduating in September 2020 with First Class honors (collegiate period 2016-2020). I completed CBSE Class XII in 2015 and CBSE Class X in 2013 with 9.2 CGPA at Radiant International School in Patna, Bihar."
+  },
+  {
+    "id": "chunk_career_0",
+    "category": "career",
+    "title": "Professional Role: Senior MLOps / ML Platform Engineer at Accenture (Client: UBS)",
+    "text": "I worked as a Senior MLOps / ML Platform Engineer at Accenture (Client: UBS) in Pune, India during 01/2025 - Present. Description of my duties: Architect configuration-driven ML training and deployment pipelines using GitLab CI/CD, CDSW, and MLflow for automated versioning and tracking. Redesign model pipelines from branch-per-model to single parameterized CI/CD system, enabling N-model \u00d7 M-environment deployments. Develop 'aes_cdsw_api', an internal Python library abstracting CDSW deployment APIs to standardize model releases from GitLab CI. Design dual-workspace Azure ML promotion architectures (training + inference) with Ansible-based orchestration and uv package management. Skills I utilized: Azure ML, MLflow, GitLab CI, Ansible, Python, Kubernetes, uv."
+  },
+  {
+    "id": "chunk_career_1",
+    "category": "career",
+    "title": "Professional Role: Senior Software Engineer \u2013 DevOps & Python Automation at Bosch Global Software Technology",
+    "text": "I worked as a Senior Software Engineer \u2013 DevOps & Python Automation at Bosch Global Software Technology in Coimbatore, Tamil Nadu during 01/2023 - 12/2024. Description of my duties: Built Python automation integrating RTC, RQM, and Jenkins REST APIs to stream operational build metrics into Grafana and InfluxDB. Maintained over 50 CI build pipelines, reducing resolution times to ~20 minutes through python-based automated triage tooling. Developed data ingestion utilities for large-scale enterprise build infrastructures, improving workflow observability. Skills I utilized: Python, Jenkins, Grafana, InfluxDB, RTC, REST, Git."
+  },
+  {
+    "id": "chunk_career_2",
+    "category": "career",
+    "title": "Professional Role: DevOps & Platform Engineer at Kalycito Infotech",
+    "text": "I worked as a DevOps & Platform Engineer at Kalycito Infotech in Coimbatore, Tamil Nadu during 10/2020 - 12/2022. Description of my duties: Deployed and managed multi-node Kubernetes clusters supporting 20+ containerized services at 99.9% uptime. Configured autoscaling, resource quotas, and workload scheduling parameters. Built Docker packaging pipelines for consistent containerized deployments and developed Python test scripts. Skills I utilized: Kubernetes, Docker, Python, Linux, Git, Bash."
+  },
+  {
+    "id": "chunk_skills_projects",
+    "category": "career",
+    "title": "Skills and Projects Summary",
+    "text": "I have over 6 years of experience in MLOps, DevOps, and Python automation. My technical skills include: Python, Azure ML, MLflow, GitLab CI, Kubernetes, Ansible, Bash, SQL, YAML, PyTorch, Scikit-Learn, Jenkins, Docker, Git, Linux, Grafana, InfluxDB, REST, Node.js, uv. Featured projects: 1) Config-Driven ML Platform (GitLab CI/CD + CDSW + Azure ML) from 2024-2025. 2) Python API Integration & CI Metrics Automation at Bosch from 2023-2024."
+  },
+  {
+    "id": "chunk_family",
+    "category": "family",
+    "title": "Family Background, Roots and Values",
+    "text": "I come from a Brahmin family originating from Ahirauli village in Buxar district, Bihar. Our family Gotra is Bhargav. My father is Shri Manoranjan Choubey, who is an Income Tax Advocate. My mother is Smt. Anita Choubey, who is a Homemaker. My brother is Rahul Choubey, who is also an Advocate. My late grandfather was Shri S.K. Choubey, a retired IRS Officer. Our family values prioritize integrity, education, respect, and tradition."
+  },
+  {
+    "id": "chunk_lifestyle",
+    "category": "lifestyle",
+    "title": "Lifestyle, Hobbies and Daily Routine",
+    "text": "I follow a highly disciplined daily schedule: waking up at 5:30 AM, working out at the gym from 6:00 to 7:30 AM, engineering MLOps systems from 9:00 AM to 6:00 PM, upskilling and learning research papers from 7:00 to 8:30 PM, connecting with my family from 9:00 to 10:00 PM, and resting by 10:30 PM. Hobbies include physical fitness, technical reading, travel & cultural discovery, playing acoustic guitar, and playing with my pet pug dog Muffy."
+  },
+  {
+    "id": "chunk_goals",
+    "category": "goals",
+    "title": "Future Aspirations and Goals",
+    "text": "My personal and professional roadmaps include: - AI & Infrastructure Leadership (1-3 Years, professional) - Supporting Parents (Healthcare & comfort) (Ongoing, family) - Financial Independence (3-5 Years, financial) - Healthy Values-driven Family (1-2 Years, family) - Continuous Learning & Upskilling (Ongoing, personal)."
+  },
+  {
+    "id": "chunk_matrimonial",
+    "category": "matrimonial",
+    "title": "Marriage Expectations and Life Partner Preferences",
+    "text": "I am looking for a life partner who is educated, family-oriented, respectful, and ambitious, valuing mutual trust, emotional support, and shared family roots. I believe a healthy marriage is built on mutual support, trust, and shared values."
+  },
+  {
+    "id": "chunk_photos",
+    "category": "personal",
+    "title": "Photo Gallery & Travel Stories",
+    "text": "My website features a storytelling photo gallery: - Family at Mahavir Mandir, Patna: A blessed family visit to the sacred Mahavir Mandir temple in Patna. (Family) - Coimbatore Institute of Technology: My B.Tech college campus in Coimbatore, Tamil Nadu. (Personal) - Celebrating Chhath Puja: Observing traditional Chhath Puja rituals in Patna, keeping our family heritage alive. (Family) - Rameshwaram Temple with Maa: A sacred visit to Rameshwaram Temple in Tamil Nadu with my mother, Smt. Anita Choubey. (Family) - With My Mother: A warm and cherished moment with my mother, Smt. Anita Choubey. (Family) - With My Father: A meaningful photograph with my father, Shri Manoranjan Choubey. (Family) - With My Father: A photograph with my father, Shri Manoranjan Choubey. (Family) - With My Grandfather: With my late grandfather, Shri S.K. Choubey, a retired IRS Officer. (Family) - Shri Manoranjan Choubey: My father, Shri Manoranjan Choubey, Income Tax Advocate. (Family) - Professional Portrait: My professional profile photograph. (Personal) - Rahul Choubey: My brother, Rahul Choubey, Advocate. (Family) - Rock Band Performance: Performing live on guitar with our rock band at the Bosch employees interstate music competition. (Lifestyle) - UBS Office, Pune: The campus in Pune where I work on MLOps and AI platforms. (Personal) - Adiyogi, Coimbatore: The iconic Adiyogi Shiva statue near Coimbatore \u2014 a memorable place from my engineering years. (Lifestyle) - Bosch Office, Coimbatore: The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer. (Personal) - Early Days at Kalycito: At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer. (Personal) - With Brother & Grandparents: A treasured family photograph with my brother Rahul Choubey and our grandparents. (Family) - At Isha Yoga with Maa: A peaceful and spiritual journey to the Isha Yoga Center with my mother. (Family) - My Pug, Muffy: A happy moment with my beloved pug dog, Muffy. (Lifestyle) - Atul Choubey: A candid portrait. (Personal) - In My Element: A candid personal moment reflecting focus and energy. (Personal) - Guitar & Leisure: Playing acoustic guitar during my leisure hours in early career days. (Lifestyle) - School Days in Patna: A throwback from my school days at Radiant School in Patna. (Personal) - Smt. Anita Choubey: My mother, Smt. Anita Choubey, Homemaker. (Family) - Road Trips & Travel: My car \u2014 a symbol of my love for road trips and exploring new places. (Lifestyle)."
+  },
+  {
+    "id": "chunk_certificates",
+    "category": "education",
+    "title": "Verified Certificates and Marksheets",
+    "text": "My verified certificates and documents include: - Bachelor of Technology in Information Technology issued by Coimbatore Institute of Technology on September 2020 (Credential: Anna University - First Class Passing) - Provisional B.Tech IT Degree Certificate issued by Anna University, Chennai on September 2020 (Credential: Register No. 1605011 (Autonomous)) - CBSE Class XII Certificate & Marksheet issued by Central Board of Secondary Education (CBSE) on May 2015 (Credential: Science Stream - Passed (Radiant School)) - CBSE Class X Certificate & Marksheet issued by Central Board of Secondary Education (CBSE) on May 2013 (Credential: 9.2 CGPA - Passed (Radiant School))."
+  }
+]
