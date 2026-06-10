@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Atul Choubey",
+    "dob": "15th March 1997",
+    "birthplace": "Patna, Bihar",
+    "currentLocation": "Pune, Maharashtra",
+    "nativePlace": "Ahirauli, Buxar, Bihar",
+    "height": "5 feet 7 inches",
+    "gotra": "Bhargav",
+    "zodiac": "Meena (Pisces)",
+    "religion": "Hindu",
+    "caste": "Brahmin",
+    "age": 29
+  },
+  "family": {
+    "father": {
+      "name": "Shri Manoranjan Choubey",
+      "occupation": "Income Tax Advocate",
+      "description": "Guides the family with legal and ethical values."
+    },
+    "mother": {
+      "name": "Smt. Anita Choubey",
+      "occupation": "Homemaker",
+      "description": "A strong source of love and support, preserving our traditional customs and anchoring the home."
+    },
+    "brother": {
+      "name": "Rahul Choubey",
+      "occupation": "Advocate",
+      "description": "Advocates law, justice, and family values."
+    },
+    "grandfather": {
+      "name": "Shri S.K. Choubey",
+      "occupation": "Retired IRS Officer",
+      "description": "An inspiration for dedication, administrative discipline, and service."
+    },
+    "ancestralVillage": "Ahirauli, Buxar district, Bihar",
+    "gotra": "Bhargav",
+    "caste": "Brahmin",
+    "background": "A close-knit Brahmin family rooted in integrity, education, and tradition. Both father and brother are legal professionals.",
+    "values": ["Integrity", "Education", "Respect", "Tradition", "Continuous Growth", "Family First"]
+  },
+  "education": {
+    "undergraduate": {
+      "degree": "Bachelor of Technology (B.Tech)",
+      "field": "Information Technology",
+      "institution": "Coimbatore Institute of Technology",
+      "university": "Anna University (Autonomous)",
+      "location": "Coimbatore, Tamil Nadu",
+      "period": "2016–2020",
+      "graduationYear": 2020,
+      "honors": "First Class"
+    },
+    "higherSecondary": {
+      "board": "CBSE",
+      "school": "Radiant International School",
+      "location": "Patna, Bihar",
+      "year": 2015,
+      "stream": "Science"
+    },
+    "secondary": {
+      "board": "CBSE",
+      "school": "Radiant International School",
+      "location": "Patna, Bihar",
+      "year": 2013,
+      "cgpa": "9.2"
+    }
+  },
+  "career": [
+    {
+      "company": "Accenture (Client: UBS)",
+      "role": "Senior MLOps / ML Platform Engineer",
+      "location": "Pune, India",
+      "period": "January 2025 – Present",
+      "type": "current",
+      "highlights": [
+        "Architect configuration-driven ML training and deployment pipelines using GitLab CI/CD, CDSW, and MLflow",
+        "Redesigned model pipelines to a single parameterized CI/CD system enabling N-model × M-environment deployments",
+        "Developed 'aes_cdsw_api' — an internal Python library standardizing CDSW model releases from GitLab CI",
+        "Designed dual-workspace Azure ML promotion architectures with Ansible-based orchestration"
+      ],
+      "skills": ["Azure ML", "MLflow", "GitLab CI/CD", "Ansible", "Python", "Kubernetes", "CDSW", "uv"]
+    },
+    {
+      "company": "Bosch Global Software Technology",
+      "role": "Senior Software Engineer – DevOps & Python Automation",
+      "location": "Coimbatore, Tamil Nadu",
+      "period": "January 2023 – December 2024",
+      "highlights": [
+        "Built Python automation integrating RTC, RQM, and Jenkins REST APIs into Grafana and InfluxDB dashboards",
+        "Maintained over 50 CI build pipelines, reducing resolution times to ~20 minutes",
+        "Developed data ingestion utilities for large-scale enterprise build infrastructure",
+        "Also performed with the employee rock band at an interstate music competition"
+      ],
+      "skills": ["Python", "Jenkins", "Grafana", "InfluxDB", "REST APIs", "Git"]
+    },
+    {
+      "company": "Kalycito Infotech",
+      "role": "DevOps & Platform Engineer",
+      "location": "Coimbatore, Tamil Nadu",
+      "period": "October 2020 – December 2022",
+      "highlights": [
+        "Deployed and managed multi-node Kubernetes clusters supporting 20+ containerized services at 99.9% uptime",
+        "Configured autoscaling, resource quotas, and workload scheduling",
+        "Built Docker packaging pipelines for consistent containerized deployments"
+      ],
+      "skills": ["Kubernetes", "Docker", "Python", "Linux", "Git", "Bash"]
+    }
+  ],
+  "skills": {
+    "core": ["MLOps", "DevOps", "Python Automation", "AI Platform Engineering"],
+    "tools": ["Azure ML", "MLflow", "GitLab CI", "Kubernetes", "Docker", "Jenkins", "Ansible"],
+    "languages": ["Python", "Bash", "SQL", "YAML", "Node.js"],
+    "frameworks": ["PyTorch", "Scikit-Learn"],
+    "monitoring": ["Grafana", "InfluxDB"],
+    "totalExperience": "6+ years"
+  },
+  "projects": [
+    {
+      "name": "Config-Driven ML Platform",
+      "description": "Configuration-driven ML platform using GitLab CI/CD, CDSW, and Azure ML to automate training pipelines. Replaced manual model releases with fully automated workflows.",
+      "period": "2024–2025"
+    },
+    {
+      "name": "Python API Integration & CI Metrics Automation",
+      "description": "Automated collection for 50+ build pipelines integrating RTC, RQM, and Jenkins REST APIs to stream real-time metrics to Grafana/InfluxDB.",
+      "period": "2023–2024"
+    }
+  ],
+  "values": {
+    "core": ["Integrity", "Family First", "Discipline", "Continuous Learning", "Simplicity", "Respect"],
+    "description": "My values come from my family upbringing in Bihar. Integrity, family-first thinking, discipline, and respect guide every decision I make — personally and professionally."
+  },
+  "goals": {
+    "career": "Grow into an AI & Infrastructure Leadership role within 1–3 years",
+    "family": "Support parents' health and comfort; build a happy, values-driven family",
+    "financial": "Achieve financial independence within 3–5 years",
+    "personal": "Continuous learning, upskilling in AI/ML, and staying physically fit"
+  },
+  "lifestyle": {
+    "dailyRoutine": "Wake at 5:30 AM → Gym 6:00–7:30 AM → Work 9:00 AM–6:00 PM → Upskilling 7:00–8:30 PM → Family time 9:00–10:00 PM → Sleep 10:30 PM",
+    "hobbies": ["Physical fitness & gym", "Acoustic guitar", "Travel & cultural discovery", "Technical reading & research papers", "Caring for pet pug Muffy"],
+    "discipline": "Highly structured daily routine built around fitness, professional growth, and family connection"
+  },
+  "achievements": [
+    "6+ years of engineering experience across startups, enterprise, and global banking",
+    "Built and maintained 50+ CI build pipelines at Bosch with ~20-minute resolution times",
+    "Architected a config-driven ML platform at UBS replacing manual model releases",
+    "Performed with employee rock band at Bosch interstate music competition",
+    "First Class B.Tech graduate from Anna University"
+  ],
+  "marriageProfile": {
+    "personality": "Disciplined, family-oriented, ambitious, warm, and respectful",
+    "lookingFor": "An educated, family-oriented, respectful, and ambitious life partner who values mutual trust, emotional support, and shared family roots",
+    "strengths": [
+      "Stable and growing career in AI/ML",
+      "Deep-rooted family values and respect for elders",
+      "Disciplined lifestyle — fitness, continuous learning, structure",
+      "Warm and caring nature — family time is protected daily",
+      "Professionally ambitious but personally grounded"
+    ],
+    "familyValues": "Family comes first. I protect daily family time. I respect my parents and elders deeply. I believe a happy home is built on mutual trust and shared values.",
+    "lifestyle": "Structured but warm — mornings for fitness, days for professional excellence, evenings for family connection",
+    "longTermVision": "A happy, values-driven family life with mutual respect, professional growth, and care for our parents"
+  },
+  "timeline": [
+    { "year": 1997, "event": "Born in Patna, Bihar", "category": "personal" },
+    { "year": 2013, "event": "Completed Class X (CBSE, 9.2 CGPA) from Radiant International School, Patna", "category": "education" },
+    { "year": 2015, "event": "Completed Class XII (CBSE, Science) from Radiant International School, Patna", "category": "education" },
+    { "year": 2016, "event": "Moved to Coimbatore — started B.Tech in Information Technology at CIT", "category": "education" },
+    { "year": 2020, "event": "Graduated B.Tech First Class from Anna University. Joined Kalycito Infotech as DevOps Engineer", "category": "career" },
+    { "year": 2023, "event": "Joined Bosch Global Software Technology as Senior Software Engineer", "category": "career" },
+    { "year": 2025, "event": "Joined Accenture (Client: UBS) as Senior MLOps Engineer — relocated to Pune", "category": "career" }
+  ],
+  "knownEntitiesOnly": {
+    "familyMembers": ["Atul Choubey", "Manoranjan Choubey", "Anita Choubey", "Rahul Choubey", "SK Choubey"],
+    "companies": ["Accenture", "UBS", "Bosch Global Software Technology", "Kalycito Infotech"],
+    "schools": ["Radiant International School", "Coimbatore Institute of Technology", "Anna University"],
+    "locations": ["Patna", "Bihar", "Buxar", "Ahirauli", "Coimbatore", "Pune", "Tamil Nadu", "Maharashtra"]
+  }
+}

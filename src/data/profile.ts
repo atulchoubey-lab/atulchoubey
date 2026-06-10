@@ -278,6 +278,20 @@ export const profileData = {
       "exclude_from_gallery": true
     },
     {
+      "id": "photo_explore",
+      "src": "/images/explore.jpg",
+      "title": "Travel & Exploration",
+      "description": "Travel and exploration section photo.",
+      "category": "Personal",
+      "width": 3024,
+      "height": 2859,
+      "orientation": "square",
+      "featured": false,
+      "display_section": "hidden",
+      "display_priority": 99,
+      "exclude_from_gallery": true
+    },
+    {
       "id": "photo_me-in-chath-puja",
       "src": "/images/me-in-chath-puja.jpg",
       "title": "Celebrating Chhath Puja",
@@ -460,6 +474,20 @@ export const profileData = {
       "exclude_from_gallery": true
     },
     {
+      "id": "photo_fitness",
+      "src": "/images/fitness.jpg",
+      "title": "Fitness & Lifestyle",
+      "description": "Fitness and lifestyle section photo.",
+      "category": "Personal",
+      "width": 3024,
+      "height": 4032,
+      "orientation": "portrait",
+      "featured": false,
+      "display_section": "hidden",
+      "display_priority": 99,
+      "exclude_from_gallery": true
+    },
+    {
       "id": "photo_me-at-kalycito-office-early-days",
       "src": "/images/me-at-kalycito-office-early-days.jpg",
       "title": "Early Days at Kalycito",
@@ -586,6 +614,20 @@ export const profileData = {
       "exclude_from_gallery": true
     },
     {
+      "id": "photo_music",
+      "src": "/images/music.jpg",
+      "title": "Music & Hobbies",
+      "description": "Music and hobbies section photo.",
+      "category": "Personal",
+      "width": 750,
+      "height": 742,
+      "orientation": "square",
+      "featured": false,
+      "display_section": "hidden",
+      "display_priority": 99,
+      "exclude_from_gallery": true
+    },
+    {
       "id": "photo_my-car",
       "src": "/images/my-car.jpg",
       "title": "Road Trips & Travel",
@@ -665,6 +707,17 @@ export const imageManifest = [
     "display_section": "journey",
     "portrait_or_landscape": "portrait",
     "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/explore.jpg",
+    "category": "Personal",
+    "display_title": "Travel & Exploration",
+    "display_caption": "Travel and exploration section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "square",
+    "featured": false,
     "exclude_from_gallery": true
   },
   {
@@ -811,6 +864,17 @@ export const imageManifest = [
     "exclude_from_gallery": true
   },
   {
+    "src": "/images/fitness.jpg",
+    "category": "Personal",
+    "display_title": "Fitness & Lifestyle",
+    "display_caption": "Fitness and lifestyle section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "portrait",
+    "featured": false,
+    "exclude_from_gallery": true
+  },
+  {
     "src": "/images/me-at-kalycito-office-early-days.jpg",
     "category": "Personal",
     "display_title": "Early Days at Kalycito",
@@ -907,6 +971,17 @@ export const imageManifest = [
     "display_section": "family",
     "portrait_or_landscape": "landscape",
     "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/music.jpg",
+    "category": "Personal",
+    "display_title": "Music & Hobbies",
+    "display_caption": "Music and hobbies section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "square",
+    "featured": false,
     "exclude_from_gallery": true
   },
   {

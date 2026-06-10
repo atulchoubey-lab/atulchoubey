@@ -22,6 +22,17 @@
     "exclude_from_gallery": true
   },
   {
+    "src": "/images/explore.jpg",
+    "category": "Personal",
+    "display_title": "Travel & Exploration",
+    "display_caption": "Travel and exploration section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "square",
+    "featured": false,
+    "exclude_from_gallery": true
+  },
+  {
     "src": "/images/me-in-chath-puja.jpg",
     "category": "Family",
     "display_title": "Celebrating Chhath Puja",
@@ -165,6 +176,17 @@
     "exclude_from_gallery": true
   },
   {
+    "src": "/images/fitness.jpg",
+    "category": "Personal",
+    "display_title": "Fitness & Lifestyle",
+    "display_caption": "Fitness and lifestyle section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "portrait",
+    "featured": false,
+    "exclude_from_gallery": true
+  },
+  {
     "src": "/images/me-at-kalycito-office-early-days.jpg",
     "category": "Personal",
     "display_title": "Early Days at Kalycito",
@@ -261,6 +283,17 @@
     "display_section": "family",
     "portrait_or_landscape": "landscape",
     "featured": true,
+    "exclude_from_gallery": true
+  },
+  {
+    "src": "/images/music.jpg",
+    "category": "Personal",
+    "display_title": "Music & Hobbies",
+    "display_caption": "Music and hobbies section photo.",
+    "display_priority": 99,
+    "display_section": "hidden",
+    "portrait_or_landscape": "square",
+    "featured": false,
     "exclude_from_gallery": true
   },
   {
