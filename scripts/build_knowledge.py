@@ -615,11 +615,12 @@ profile_data = {
 chunks = []
 
 # Personal Info Chunk
+_p = profile_data["personal"]
 chunks.append({
     "id": "chunk_personal",
     "category": "personal",
     "title": "Personal Details & Background",
-    "text": f"I am a 29-year-old MLOps Engineer born in Patna, Bihar on 15th March 1997. I stand 5'10\" tall, belong to the Bhargav Gotra, and have the zodiac sign (Rashi) Vrishabha (Taurus). I am originally from Ahirauli village in Buxar district, Bihar, and currently reside in Pune, India. My email is cse.atul.choubey@gmail.com and phone is +91-9142758697. I value discipline, continuous learning, and family values."
+    "text": f"I am a {_p['age']}-year-old MLOps Engineer born in {_p['birth_place']} on {_p['birth_display']}. I stand {_p['height']} tall, belong to the {_p['gothra']} Gotra, and my zodiac sign (Rashi) is {_p['rashi']}. I am originally from {_p['native_place']}, and currently live in {_p['current_city']}. I value discipline, continuous learning, and family."
 })
 
 # Education Chunks
@@ -688,7 +689,7 @@ chunks.append({
 photo_str = " ".join([f"- {p['title']}: {p['description']} ({p['category']})" for p in photos_list])
 chunks.append({
     "id": "chunk_photos",
-    "category": "personal",
+    "category": "gallery",
     "title": "Photo Gallery & Travel Stories",
     "text": f"My website features a storytelling photo gallery: {photo_str}."
 })
