@@ -5,7 +5,13 @@ import shutil
 import subprocess
 import urllib.request
 import urllib.error
-from PIL import Image
+
+try:
+    from PIL import Image
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
+    print("PIL not available — using default image dimensions (Vercel-compatible mode)")
 
 # Config and Constants
 RESUME_TEXT_PATH = "Data/Resume/parsed_resume.txt"
@@ -26,14 +32,232 @@ def slugify(s):
     s = re.sub(r'-+', '-', s)
     return s.strip('-')
 
+def get_image_dims(image_path):
+    """Return (width, height, orientation). Uses PIL if available, else returns safe defaults."""
+    if PIL_AVAILABLE:
+        try:
+            with Image.open(image_path) as img:
+                w, h = img.size
+                ratio = w / h
+                if ratio > 1.25: orient = "landscape"
+                elif ratio < 0.80: orient = "portrait"
+                else: orient = "square"
+                return w, h, orient
+        except Exception:
+            pass
+    return 1200, 800, "landscape"
+
+# Photo metadata — single source of truth for all images
+SLUG_MAPPINGS = {
+    "cit": {
+        "title": "Coimbatore Institute of Technology",
+        "description": "My B.Tech college campus in Coimbatore, Tamil Nadu.",
+        "category": "Personal", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 2
+    },
+    "me-in-chath-puja": {
+        "title": "Celebrating Chhath Puja",
+        "description": "Observing traditional Chhath Puja rituals in Patna, keeping our family heritage alive.",
+        "category": "Family", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-with-mom-in-rameshwaram-temple": {
+        "title": "Rameshwaram Temple with Maa",
+        "description": "A sacred visit to Rameshwaram Temple in Tamil Nadu with my mother, Smt. Anita Choubey.",
+        "category": "Family", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-with-mom": {
+        "title": "With My Mother",
+        "description": "A warm and cherished moment with my mother, Smt. Anita Choubey.",
+        "category": "Family", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-with-my-father-add-this-photo-in-family-intro": {
+        "title": "With My Father",
+        "description": "A meaningful photograph with my father, Shri Manoranjan Choubey.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 1
+    },
+    "me-with-my-father": {
+        "title": "With My Father",
+        "description": "A photograph with my father, Shri Manoranjan Choubey.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 1
+    },
+    "papa-profile-photo": {
+        "title": "Shri Manoranjan Choubey",
+        "description": "My father, Shri Manoranjan Choubey, Income Tax Advocate.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "me-with-my-grandfather-sk-choubey-who-was-a-retired-irs-officer": {
+        "title": "With My Grandfather",
+        "description": "With my late grandfather, Shri SK Choubey, a retired IRS Officer.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "family-photo-at-mahavir-mandir-patna": {
+        "title": "Family at Mahavir Mandir, Patna",
+        "description": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
+        "category": "Family", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 1
+    },
+    "profile-photo": {
+        "title": "Professional Portrait",
+        "description": "My professional profile photograph.",
+        "category": "Personal", "display_section": "hero",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "rahul-profile-photo": {
+        "title": "Rahul Choubey",
+        "description": "My brother, Rahul Choubey, Advocate.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "mom-profile-photo": {
+        "title": "Smt. Anita Choubey",
+        "description": "My mother, Smt. Anita Choubey, Homemaker.",
+        "category": "Family", "display_section": "family",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "rock-band-performance-at-bosch-employees-interstate-competition": {
+        "title": "Rock Band Performance",
+        "description": "Performing live on guitar with our rock band at the Bosch employees interstate music competition.",
+        "category": "Lifestyle", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "ubs-pune": {
+        "title": "UBS Office, Pune",
+        "description": "The campus in Pune where I work on MLOps and AI platforms.",
+        "category": "Personal", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 2
+    },
+    "adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero": {
+        "title": "Adiyogi, Coimbatore",
+        "description": "The iconic Adiyogi Shiva statue near Coimbatore — a memorable place from my engineering years.",
+        "category": "Lifestyle", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 2
+    },
+    "bosch-building": {
+        "title": "Bosch Office, Coimbatore",
+        "description": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
+        "category": "Personal", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 2
+    },
+    "me-with-my-brother-grand-father-and-grand-mother": {
+        "title": "With Brother & Grandparents",
+        "description": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
+        "category": "Family", "display_section": "gallery",
+        "featured": False, "exclude_from_gallery": False, "display_priority": 3
+    },
+    "me-with-my-mom-in-isha-yoga": {
+        "title": "At Isha Yoga with Maa",
+        "description": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
+        "category": "Family", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-with-my-pug-muffy": {
+        "title": "My Pug, Muffy",
+        "description": "A happy moment with my beloved pug dog, Muffy.",
+        "category": "Lifestyle", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me": {
+        "title": "Atul Choubey",
+        "description": "A candid portrait.",
+        "category": "Personal", "display_section": "about",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 1
+    },
+    "me2": {
+        "title": "In My Element",
+        "description": "A candid personal moment reflecting focus and energy.",
+        "category": "Personal", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-for-journey": {
+        "title": "Guitar & Leisure",
+        "description": "Playing acoustic guitar during my leisure hours in early career days.",
+        "category": "Lifestyle", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "me-school-time": {
+        "title": "School Days in Patna",
+        "description": "A throwback from my school days at Radiant School in Patna.",
+        "category": "Personal", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-at-kalycito-office-early-days": {
+        "title": "Early Days at Kalycito",
+        "description": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
+        "category": "Personal", "display_section": "journey",
+        "featured": True, "exclude_from_gallery": True, "display_priority": 1
+    },
+    "my-car": {
+        "title": "Road Trips & Travel",
+        "description": "My car — a symbol of my love for road trips and exploring new places.",
+        "category": "Lifestyle", "display_section": "gallery",
+        "featured": False, "exclude_from_gallery": False, "display_priority": 3
+    },
+    "my-guitar": {
+        "title": "Playing Guitar",
+        "description": "Strumming my acoustic guitar — music is one of my greatest passions.",
+        "category": "Lifestyle", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+    "me-with-guitar": {
+        "title": "Guitar Sessions",
+        "description": "Playing acoustic guitar — music keeps me grounded.",
+        "category": "Lifestyle", "display_section": "gallery",
+        "featured": True, "exclude_from_gallery": False, "display_priority": 2
+    },
+}
+
+def build_photo_entry(slug, dest_path):
+    """Build a photo metadata dict for a given slug and file path."""
+    width, height, orientation = get_image_dims(dest_path)
+    m = SLUG_MAPPINGS.get(slug, {
+        "title": slug.replace('-', ' ').title(),
+        "description": "A personal photograph.",
+        "category": "Personal", "display_section": "gallery",
+        "featured": False, "exclude_from_gallery": False, "display_priority": 3
+    })
+    return {
+        "id": f"photo_{slug}",
+        "src": f"/images/{slug}.jpg",
+        "title": m["title"],
+        "description": m["description"],
+        "category": m["category"],
+        "width": width,
+        "height": height,
+        "orientation": orientation,
+        "featured": m["featured"],
+        "display_section": m["display_section"],
+        "display_priority": m["display_priority"],
+        "exclude_from_gallery": m["exclude_from_gallery"],
+    }
+
 # 2. Convert and Copy Images from Data/images/
 def process_images():
     data_images_dir = "Data/images"
     photos_metadata = []
     existing_slugs = set()
-    
+
+    # Vercel / CI mode: Data/images/ not available — build from public/images/ directly
     if not os.path.exists(data_images_dir):
-        print(f"Warning: {data_images_dir} does not exist.")
+        print("Data/images not found — building manifest from public/images/ (Vercel mode)")
+        if not os.path.exists(IMAGES_DIR):
+            return photos_metadata
+        for filename in sorted(os.listdir(IMAGES_DIR)):
+            if filename.startswith(".") or not filename.lower().endswith(".jpg"):
+                continue
+            slug = os.path.splitext(filename)[0]
+            if slug in existing_slugs:
+                continue
+            existing_slugs.add(slug)
+            dest_path = os.path.join(IMAGES_DIR, filename)
+            photos_metadata.append(build_photo_entry(slug, dest_path))
+        print(f"Vercel mode: found {len(photos_metadata)} images in public/images/")
         return photos_metadata
         
     for filename in sorted(os.listdir(data_images_dir)):
@@ -74,305 +298,11 @@ def process_images():
                 print(f"Error copying image {filename}: {e}")
                 continue
                 
-        # Read dimensions and detect orientation using PIL
-        try:
-            with Image.open(dest_path) as img:
-                width, height = img.size
-        except Exception as e:
-            print(f"Error reading image dimensions {dest_path}: {e}")
-            width, height = 800, 600 # Fallbacks
-            
-        aspect_ratio = width / height
-        if aspect_ratio > 1.25:
-            orientation = "landscape"
-        elif aspect_ratio < 0.8:
-            orientation = "portrait"
-        else:
-            orientation = "square"
-            
-        # Curated manual metadata mapping to prevent any filename leaks
-        slug_mappings = {
-            "cit": {
-                "title": "Coimbatore Institute of Technology",
-                "description": "My B.Tech college campus in Coimbatore, Tamil Nadu.",
-                "category": "Personal",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 2
-            },
-            "me-in-chath-puja": {
-                "title": "Celebrating Chhath Puja",
-                "description": "Observing traditional Chhath Puja rituals in Patna, keeping our family heritage alive.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-with-mom-in-rameshwaram-temple": {
-                "title": "Rameshwaram Temple with Maa",
-                "description": "A sacred visit to Rameshwaram Temple in Tamil Nadu with my mother, Smt. Anita Choubey.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-with-mom": {
-                "title": "With My Mother",
-                "description": "A warm and cherished moment with my mother, Smt. Anita Choubey.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-with-my-father-add-this-photo-in-family-intro": {
-                "title": "With My Father",
-                "description": "A meaningful photograph with my father, Shri Manoranjan Choubey.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 1
-            },
-            "me-with-my-father": {
-                "title": "With My Father",
-                "description": "A photograph with my father, Shri Manoranjan Choubey.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 1
-            },
-            "papa-profile-photo": {
-                "title": "Shri Manoranjan Choubey",
-                "description": "My father, Shri Manoranjan Choubey, Income Tax Advocate.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "me-with-my-grandfather-sk-choubey-who-was-a-retired-irs-officer": {
-                "title": "With My Grandfather",
-                "description": "With my late grandfather, Shri S.K. Choubey, a retired IRS Officer.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "family-photo-at-mahavir-mandir-patna": {
-                "title": "Family at Mahavir Mandir, Patna",
-                "description": "A blessed family visit to the sacred Mahavir Mandir temple in Patna.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 1
-            },
-            "profile-photo": {
-                "title": "Professional Portrait",
-                "description": "My professional profile photograph.",
-                "category": "Personal",
-                "display_section": "hero",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "rahul-profile-photo": {
-                "title": "Rahul Choubey",
-                "description": "My brother, Rahul Choubey, Advocate.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "mom-profile-photo": {
-                "title": "Smt. Anita Choubey",
-                "description": "My mother, Smt. Anita Choubey, Homemaker.",
-                "category": "Family",
-                "display_section": "family",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "rock-band-performance-at-bosch-employees-interstate-competition": {
-                "title": "Rock Band Performance",
-                "description": "Performing live on guitar with our rock band at the Bosch employees interstate music competition.",
-                "category": "Lifestyle",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "ubs-pune": {
-                "title": "UBS Office, Pune",
-                "description": "The campus in Pune where I work on MLOps and AI platforms.",
-                "category": "Personal",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 2
-            },
-            "adiyogi-shiva-statue-coimbatore-tamil-nadu-city-1-hero": {
-                "title": "Adiyogi, Coimbatore",
-                "description": "The iconic Adiyogi Shiva statue near Coimbatore — a memorable place from my engineering years.",
-                "category": "Lifestyle",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 2
-            },
-            "bosch-building": {
-                "title": "Bosch Office, Coimbatore",
-                "description": "The Bosch Global Software Technology campus in Coimbatore where I worked as a Senior DevOps Engineer.",
-                "category": "Personal",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 2
-            },
-            "me-with-my-brother-grand-father-and-grand-mother": {
-                "title": "With Brother & Grandparents",
-                "description": "A treasured family photograph with my brother Rahul Choubey and our grandparents.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": False,
-                "exclude_from_gallery": False,
-                "display_priority": 3
-            },
-            "me-with-my-mom-in-isha-yoga": {
-                "title": "At Isha Yoga with Maa",
-                "description": "A peaceful and spiritual journey to the Isha Yoga Center with my mother.",
-                "category": "Family",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-with-my-pug-muffy": {
-                "title": "My Pug, Muffy",
-                "description": "A happy moment with my beloved pug dog, Muffy.",
-                "category": "Lifestyle",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me": {
-                "title": "Atul Choubey",
-                "description": "A candid portrait.",
-                "category": "Personal",
-                "display_section": "about",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 1
-            },
-            "me2": {
-                "title": "In My Element",
-                "description": "A candid personal moment reflecting focus and energy.",
-                "category": "Personal",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-for-journey": {
-                "title": "Guitar & Leisure",
-                "description": "Playing acoustic guitar during my leisure hours in early career days.",
-                "category": "Lifestyle",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "me-school-time": {
-                "title": "School Days in Patna",
-                "description": "A throwback from my school days at Radiant School in Patna.",
-                "category": "Personal",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-at-kalycito-office-early-days": {
-                "title": "Early Days at Kalycito",
-                "description": "At the Kalycito Infotech office in Coimbatore during my early career as a DevOps engineer.",
-                "category": "Personal",
-                "display_section": "journey",
-                "featured": True,
-                "exclude_from_gallery": True,
-                "display_priority": 1
-            },
-            "my-car": {
-                "title": "Road Trips & Travel",
-                "description": "My car — a symbol of my love for road trips and exploring new places.",
-                "category": "Lifestyle",
-                "display_section": "gallery",
-                "featured": False,
-                "exclude_from_gallery": False,
-                "display_priority": 3
-            },
-            "my-guitar": {
-                "title": "Playing Guitar",
-                "description": "Strumming my acoustic guitar — music is one of my greatest passions.",
-                "category": "Lifestyle",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            },
-            "me-with-guitar": {
-                "title": "Guitar Sessions",
-                "description": "Playing acoustic guitar — music keeps me grounded.",
-                "category": "Lifestyle",
-                "display_section": "gallery",
-                "featured": True,
-                "exclude_from_gallery": False,
-                "display_priority": 2
-            }
-        }
-        
-        if slug in slug_mappings:
-            m = slug_mappings[slug]
-            title = m["title"]
-            description = m["description"]
-            category = m["category"]
-            featured = m["featured"]
-            display_section = m["display_section"]
-            display_priority = m["display_priority"]
-            exclude_from_gallery = m["exclude_from_gallery"]
-        else:
-            # Fallback to prevent any internal filename leak (Issue 1 & Issue 5)
-            title = slug.replace('-', ' ').title()
-            description = f"Photograph of Atul Choubey ({title})."
-            category = "Personal"
-            featured = False
-            display_section = "gallery"
-            display_priority = 3
-            exclude_from_gallery = False
-            
-        photos_metadata.append({
-            "id": f"photo_{slug}",
-            "src": f"/images/{dest_filename}",
-            "title": title,
-            "description": description,
-            "category": category,
-            "width": width,
-            "height": height,
-            "orientation": orientation,
-            "featured": featured,
-            "display_section": display_section,
-            "display_priority": display_priority,
-            "exclude_from_gallery": exclude_from_gallery
-        })
+        # Build metadata from module-level SLUG_MAPPINGS
+        photos_metadata.append(build_photo_entry(slug, dest_path))
         existing_slugs.add(slug)
-        
-    print(f"Processed {len(photos_metadata)} images in public/images/")
+
+    print(f"Processed {len(photos_metadata)} images from Data/images/")
     return photos_metadata
 
 # 3. Process certificates from Data/6. Educational Document/
